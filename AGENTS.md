@@ -33,4 +33,4 @@ Never automatically run `git reset --hard`, `git clean -fd`, or force push. Neve
 - Distinguish observed results from proposed architecture. Warehouse is conceptual; NetworkX is not a graph database; reviews text/JSON audit is not a document store; local Spark is not evidence of cluster scalability.
 - The student's AI declaration is for the student to fill; do not choose a contribution percentage or rewrite it without instruction.
 - Validate notebook structure, Python cell syntax and saved outputs for documentation/configuration changes. Run the pipeline when analytic logic changes and local datasets/runtime are available; record what was actually run.
-- Avoid rerunning legacy maintenance scripts: they can overwrite notebook revisions or the current report. They are deliberately excluded from Git.
+- Legacy one-time maintenance scripts and old exports/backups were removed during cleanup. Use the current notebooks and run_local_notebooks.py; do not recreate obsolete scripts as prerequisites.

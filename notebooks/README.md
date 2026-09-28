@@ -29,7 +29,7 @@ Metrik strength graph menghitung order. Betweenness memakai jalur topologis tanp
 
 Notebook 02 membagi development/test melalui hash order_id (xxhash64 dengan salt 42), kemudian membagi development menjadi train/validation melalui hash dengan salt 43, sehingga proporsi keseluruhan sekitar 64/16/20. Hash membuat pembagian tetap meskipun Spark mengubah partisi. model_data_split_manifest.csv menyimpan anggota setiap partisi. Anggota test run lama tidak tersimpan, sehingga angka historis bukan perbandingan berpasangan. Pembanding unweighted dengan ambang 0,5 dievaluasi pada test yang sama setelah pemilihan kandidat dibekukan. Jumlah baris dan tidak adanya order yang tumpang tindih diperiksa. Bobot kelas seimbang dihitung hanya dari label train. Dua kandidat, unweighted dan balanced_class_weights, dibandingkan berdasarkan F1 validation. Ambang dipilih dari seluruh skor validation yang berbeda; skor yang sama diperlakukan bersama. Jika F1 sama, precision lebih tinggi diprioritaskan, kemudian ambang lebih tinggi. Data test tidak digunakan untuk pemilihan kandidat atau ambang.
 
-model_validation_comparison.csv mencatat perbandingan kandidat; model_validation_thresholds.csv mencatat kurva pemilihan ambang. model_evaluation_report.json dan model_confusion_matrix.csv memakai kandidat serta ambang terpilih, dengan metrik ambang 0,5 pada model yang sama sebagai pembanding. F1 adalah tujuan sementara tanpa biaya bisnis yang ditetapkan. Skor model belum dikalibrasi sebagai probabilitas. Hasil sebelum perubahan tersedia di output_backups/before_imbalance_*.
+model_validation_comparison.csv mencatat perbandingan kandidat; model_validation_thresholds.csv mencatat kurva pemilihan ambang. model_evaluation_report.json dan model_confusion_matrix.csv memakai kandidat serta ambang terpilih, dengan metrik ambang 0,5 pada model yang sama sebagai pembanding. F1 adalah tujuan sementara tanpa biaya bisnis yang ditetapkan. Skor model belum dikalibrasi sebagai probabilitas. Backup hasil lama telah dihapus saat pembersihan proyek; gunakan hasil terbaru.
 
 ## Output
 
@@ -37,7 +37,7 @@ Notebook 01 menghasilkan sembilan tabel datasets_parquet, ingestion_summary_repo
 Notebook 02 menghasilkan feature dataset, audit persiapan, laporan state, feature importance, confusion matrix, dan evaluasi ROC-AUC/PR-AUC/precision/recall/F1 serta baseline.
 Notebook 03 menghasilkan laporan rute, metrik node, dan audit konsistensi dengan notebook 02.
 
-Semua laporan berada pada outputs_ml_graph. Output sel disimpan pada notebook setelah eksekusi. Gunakan angka terbaru untuk memperbarui laporan. Versi notebook sebelum perubahan tersedia pada notebook_backups.
+Semua laporan berada pada outputs_ml_graph. Output sel disimpan pada notebook setelah eksekusi. Gunakan angka terbaru untuk memperbarui laporan. Backup notebook lama telah dihapus saat pembersihan proyek; versi yang dipublikasikan selanjutnya dilacak melalui Git.
 
 ## Repository lintas perangkat
 

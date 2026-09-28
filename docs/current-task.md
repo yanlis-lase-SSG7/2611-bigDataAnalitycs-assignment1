@@ -4,7 +4,7 @@ Last updated: 2026-09-28
 
 ## Current Objective
 
-Initial repository setup and GitHub publication for Assignment I, preserving existing local work and the remote README commit.
+Clean up obsolete local exports, backups, and one-time scripts after repository initialization.
 
 ## Current Status
 
@@ -22,10 +22,13 @@ Completed
 - Authenticated with yanlis-lase-SSG7; main successfully pushed to the target GitHub repository.
 - Verified main tracks origin/main and working tree was clean after publication.
 - Finalized this handoff document for the final documentation commit.
+- Removed the 16 obsolete items explicitly requested by the user: exports, notebook_backups, output_backups, legacy scripts/review, INITIALIZE_CODEX.md, and the parent bda/.review directory. output_backups and bda/.review were sent to the Windows Recycle Bin; other requested obsolete items were deleted directly.
+- Kept run_local_notebooks.py because it remains the documented runner for all three notebooks.
+- Updated stale backup references. Notebook source, current report, datasets, runtime, and current outputs were retained.
 
 ## Remaining Work
 
-No repository initialization work remains.
+No local cleanup work remains. The user authorized committing and publishing the cleanup documentation to origin/main.
 
 ## Technical Decisions
 
