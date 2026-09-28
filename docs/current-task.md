@@ -8,7 +8,7 @@ Initial repository setup and GitHub publication for Assignment I, preserving exi
 
 ## Current Status
 
-Awaiting GitHub authentication / write permission
+Completed
 
 ## Completed
 
@@ -18,13 +18,14 @@ Awaiting GitHub authentication / write permission
 - Excluded datasets, runtime, environment, backups, course materials and large generated files.
 - Archived and removed outdated/duplicate Markdown from the active folder.
 - Documented project paths, Windows runtime prerequisites, and validated results.
+- Created initialization commit 854fc04 and authentication handoff commit caf9e6b.
+- Authenticated with yanlis-lase-SSG7; main successfully pushed to the target GitHub repository.
+- Verified main tracks origin/main and working tree was clean after publication.
+- Finalized this handoff document for the final documentation commit.
 
 ## Remaining Work
 
-- [x] Complete project initialization commit (854fc04).
-- [ ] Push main to GitHub: HTTP 403; cached account yanlislase lacks write permission.
-- [ ] Verify origin/main tracking and clean working tree.
-- [ ] Finalize this document and push the documentation commit.
+No repository initialization work remains.
 
 ## Technical Decisions
 
@@ -35,7 +36,6 @@ No Git LFS: large datasets and generated files remain local and can be recreated
 
 ## Known Issues / Risks
 
-- Initial push was rejected: permission denied to yanlislase. Authenticate with an account having write access to the target repository; then retry git push -u origin main. Initialization is not complete.
 - A clone does not contain source datasets, .venv, .runtime, or large generated outputs. Follow README for local setup before running notebooks.
 - Windows-specific Spark runtime is required; the tested Spark launcher was patched for paths with spaces. Multi-node production execution is not validated.
 - Model precision is low; temporal validation and intervention cost evaluation remain future work.
@@ -54,4 +54,4 @@ Full pipeline is not rerun solely for Git initialization; previously saved local
 
 ## Recommended Next Step
 
-Authenticate with an account having repository write access, retry push, verify tracking and clean state, then finalize this document and push its update. After initialization, prepare Assignment I slides/video.
+Prepare Assignment I slides/video from the current report and docs/presentation-notes.md. Complete the student AI declaration before submission. On another device, clone the repository and restore datasets/runtime as described in README.
