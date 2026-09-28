@@ -4,7 +4,7 @@ Last updated: 2026-09-28
 
 ## Current Objective
 
-Publish the reviewed report revision and prepare a short Assignment I presentation followed by a live demo in the same video, within the 10-minute limit.
+Create a nine-slide Assignment I PPTX from docs/presentation-video.md, with speaker notes, sources and a transition to a short live demo in the same video.
 
 ## Current Status
 
@@ -12,71 +12,69 @@ Ready for review
 
 ## Completed
 
-- Strengthened section 1.2 using DHL Group 2026 survey context and OECD 2019 platform trust/reviews discussion, with explicit limits on transfer to historical Olist data.
-- Connected business priorities to stakeholder decisions and consistent success measures; no unmeasured cost savings or numeric intervention targets claimed.
-- Removed nine uncited bibliography entries; all 14 remaining references have body citations.
-- Corrected graph labels implying observed hubs/bottlenecks. Kept all table values, notebook source, analytics outputs and student declaration wording unchanged.
-- Updated presentation notes. Rendered and visually inspected all 19 report pages; bibliography/form pages rechecked after final layout corrections.
-- Prepared docs/presentation-video.md: nine-slide storyboard, narration and sources, seven-minute presentation followed by a two-minute demo and 15-second closing.
-- Added demo_assignment1.py, a standard-library read-only checker for saved ingestion/model/graph reports. It does not rerun the analytics pipeline.
+- Created presentations/Assignment_I_Olist_2702751284.pptx with nine editable 16:9 slides and eight native tables.
+- Included storyboard narration, sources and target presentation timing in all nine speaker notes. Notes for slide 9 include the two-minute demo and closing script.
+- Exported every slide using Microsoft PowerPoint and inspected all nine images individually. No visual clipping or overlap found.
+- Verified PPTX structure, slide count/aspect, notes, source URLs, metrics and demo commands. Updated README and video guide to reference the actual deck.
+- Report/storyboard/demo checkpoint remains published at 0168e1e2d3c13076643d7bdc5a11ae1048333b10. Word and notebooks were not modified by the PPT task.
+- User ran all three demo sections locally and shared successful results matching the PPT/report: ingestion 54.93% savings, model recall 45.41% / precision 14.47%, graph SP–RJ 8,158 orders / 15.49% delay.
 
 ## Remaining Work
 
-- Student completes AI declaration; Codex did not select a contribution percentage.
-- Create PPTX from the prepared storyboard, review slides, rehearse and record one video (maximum 10 minutes). PPTX authoring runtime is unavailable in this session.
-- Export submission PDF after final student edits.
+- User reviews the PPT and rehearses with a stopwatch. Seven-minute presentation, two-minute demo and 15-second closing are targets, not measured recording duration.
+- Record one video of at most 10 minutes, keeping the recording running when switching from PowerPoint to VS Code.
+- Student completes the AI declaration and exports the submission PDF after final student edits.
 
 ## Technical Decisions
 
-- External surveys explain market relevance, not Olist customer behavior in 2016–2018. Faster delivery preference differs from lateness against an estimated timestamp.
-- Review differences are associations; state graphs do not prove transit, hub locations or physical bottlenecks. Intervention impacts/costs are not measured.
-- Verified results remain authoritative: 96,470 labeled orders, 7,826 delayed; review 4.2943 versus 2.5665; Parquet savings 54.93%.
-- Student declaration wording preserved; form layout corrections only.
-- Local project root/BDA_PROJECT_DIR controls reads/writes. Datasets/runtime and generated QA remain ignored. main tracks origin/main; publication requires user authorization.
-- User authorized commit and push of this checkpoint. Determine publication state from actual Git HEAD, origin/main and working tree rather than a historical documentation entry.
-- Demo recalculates metrics from saved aggregates and checks cross-report consistency. It does not prove current raw/Parquet contents, split disjointness or absence of leakage. Full notebook execution occurred previously.
+- User explicitly approved local PowerPoint authoring as a replacement for the unavailable skill-required artifact-tool runtime. Used PowerPoint COM, without adding project dependencies.
+- Deck uses Aptos, navy/teal on white, editable text/native tables and manual slide advance. No external images or embedded raw records.
+- Assignment I problem/design/governance/data preparation remains the main focus. ML/graf are early exploration; warehouse is conceptual, databases/dashboard are proposed and Spark local[4] is one machine.
+- All displayed results follow verified saved outputs: 96,470 labeled orders / 7,826 delayed, review 4.2943 versus 2.5665, storage savings 54.93%, test recall 45.41% / precision 14.47%, SP–RJ 8,158 orders / 15.49% delay.
+- Reviews are associations and the state graph does not show transit or physical hubs. External DHL/OECD sources provide context distinct from historical Olist behavior.
+- Demo script checks consistency of saved aggregate reports. It does not rerun ingestion/training or prove split disjointness/leakage absence.
+- User authorized commit and push of the PPT/documentation checkpoint. Determine publication state from actual HEAD, origin/main and working tree rather than a historical documentation entry.
 
 ## Files Changed
 
-- Laporan Big Data Analytics - 2702751284.docx: section 1.2, references, graph labels and layout.
-- docs/presentation-notes.md: market/business context aligned with report.
-- docs/presentation-video.md: slide storyboard, timed narration, demo and recording procedure.
-- demo_assignment1.py: read-only saved-result checker.
-- README.md: links to video preparation and demo usage.
-- docs/current-task.md: current video preparation and publication state.
+- presentations/Assignment_I_Olist_2702751284.pptx: new presentation.
+- README.md: actual PPT link and availability.
+- docs/presentation-video.md: deck usage and rehearsal guidance.
+- docs/current-task.md: current PPT state and verification.
 
 ## Known Issues / Risks
 
-- Repository instructions guide Codex; they do not install a background service or Git hook or synchronize files outside Codex.
-- Cross-device updates require successful commit/push and pull. Another laptop needs datasets, dependencies and Windows runtime separately to execute notebooks.
-- Spark remains a one-machine prototype; warehouse is conceptual. NoSQL/graph database deployment and dashboard remain proposed. Low model precision, temporal validation and intervention cost evaluation remain future work.
-- AI declaration remains the student's responsibility; do not determine its percentage.
-- The Presentations skill requires load_workspace_dependencies and its artifact-tool runtime; neither is available here. No PPTX has been authored. Storyboard/narration and demo are available for the next step.
+- Recording duration/audio/readability must be verified after rehearsal and recording. Presenter View should not appear in the audience recording.
+- A layout heuristic estimated possible table overflow on slide 4; native PowerPoint render shows full table and footer with clear separation. COM bound diagnostics also gave false text-box warnings resolved by visual review.
+- Model precision remains limited; temporal validation and intervention costs remain future work. No measured operational impact or cluster performance.
+- AI declaration remains the student's responsibility; do not choose its percentage.
+- Another laptop needs datasets/dependencies/runtime separately to run notebooks. Git excludes these and generated QA.
 
 ## Validation
 
 ### Build
 
-NOT AVAILABLE — notebook/Python project without a build step.
+PASS — native PowerPoint saved the PPTX and exported all nine slides to PNG in ignored .report_review/ppt_review/.
 
 ### Tests
 
-PASS — demo all/ingestion/model/graph modes succeed; corrupted ingestion status, confusion counts and graph counts fail; source report hashes unchanged. Full analytics pipeline NOT RUN because no analytic logic changed.
+PASS — PPTX ZIP integrity, nine slide/note pairs, 16:9 dimensions, eight native tables, narration/source URLs, displayed model metrics and demo commands checked. User also confirmed all three demo sections pass locally. Analytics pipeline NOT RUN because analytic logic did not change.
 
 ### Lint / Static Analysis
 
-PASS — report citations, unchanged table values, current metrics and declaration wording verified; notebook source unchanged. All 19 Word-rendered pages inspected; form clipping corrected. Demo/notebook Python syntax and staged whitespace checks pass. Six intended files reviewed, all below 5 MiB, with no credentials found by content review and heuristic scan. Report matches the reviewed SHA-256. Local QA in .report_review remains ignored.
+PASS — skill package integrity validator: zero findings; geometry/heading validator: zero findings, one heuristic table warning visually resolved. All nine slide renders inspected individually. Word/notebook changes absent. Whitespace checks passed. QA/build scripts and PNGs remain ignored.
 
 ## Environment Notes
 
-- Windows; Python 3.11; PySpark 4.0.4; Java 17. requirements.txt records dependencies.
-- Use .venv/Scripts/python.exe and kernel bda-local. Run notebooks 01 → 02 → 03; run_local_notebooks.py is the supported runner.
-- Root discovery or BDA_PROJECT_DIR selects the checkout. Keep reads, writes and staging local; no Colab/Google Drive.
-- Restore .runtime/jdk-*, .runtime/hadoop/bin and .runtime/spark-home on another laptop. Tested Windows launcher handles paths with spaces; see docs/runtime-prerequisites.md.
+- Windows with Microsoft PowerPoint installed; current user authorized its local automation. PowerPoint authoring/export session was closed after saving.
+- Python 3.11 in .venv for verification. No python-pptx or additional packages installed for deck creation.
+- Notebook stack remains PySpark 4.0.4, Java 17 and Windows runtime. See docs/runtime-prerequisites.md.
+- Local root/BDA_PROJECT_DIR controls input/output. No Colab or Google Drive.
+- main tracks origin/main. Inspect actual Git state before any future publication.
 
 ## Recommended Next Step
 
-Create PPTX from docs/presentation-video.md when the required authoring runtime is available, rehearse the demo, complete the student declaration and record the presentation/demo as one video.
+Review the PPT in PowerPoint, rehearse the seven-minute narrative and live demo using docs/presentation-video.md, then record the continuous video and verify its actual duration/audio/readability.
 
 ## Useful Commands
 
@@ -84,10 +82,8 @@ Create PPTX from docs/presentation-video.md when the required authoring runtime 
 git status
 git log -5 --oneline
 git diff
-git diff --cached
-git pull --ff-only
-.\.venv\Scripts\python.exe run_local_notebooks.py
 .\.venv\Scripts\python.exe demo_assignment1.py
+.\.venv\Scripts\python.exe demo_assignment1.py --section model
 ```
 
-The runner executes/saves all three notebooks and replaces generated outputs. Run only when intended and local prerequisites are available.
+Notebook Run All is unnecessary during the short demo unless outputs actually need regeneration.

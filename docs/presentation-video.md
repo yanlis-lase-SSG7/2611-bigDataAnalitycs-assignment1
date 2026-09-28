@@ -1,6 +1,6 @@
 # Rencana presentasi dan live demo Assignment I
 
-Target rekaman: 9 menit 15 detik dalam satu video. Presentasi 7 menit, live demo 2 menit, penutup 15 detik. Batas tugas 10 menit. Ini storyboard dan naskah untuk pembuatan PPT; berkas PPTX belum dibuat. Sesuaikan narasi dengan pemahaman sendiri dan latih dengan stopwatch.
+Target rekaman: 9 menit 15 detik dalam satu video. Presentasi 7 menit, live demo 2 menit, penutup 15 detik. Batas tugas 10 menit. [PPT sembilan slide](../presentations/Assignment_I_Olist_2702751284.pptx) sudah tersedia dengan speaker notes, sumber dan target waktu. Sesuaikan narasi dengan pemahaman sendiri dan latih dengan stopwatch; durasi tersebut merupakan target, bukan hasil pengukuran rekaman.
 
 Fokus utama tetap Assignment I: masalah bisnis, rancangan teknologi, tata kelola, persiapan dan organisasi data. Hasil ML/graf menunjukkan eksplorasi awal. Jangan menyebut dampak intervensi, deployment database, dashboard, atau cluster sebagai hasil yang sudah tercapai.
 
@@ -118,9 +118,9 @@ Jika muncul FAIL, hentikan persiapan rekaman dan periksa sumber ketidaksesuaian.
 
 ## Urutan persiapan berikutnya
 
-1. Buat PPT 16:9 dari sembilan storyboard di atas. Salin narasi dan sumber ke speaker notes. Gunakan tabel/grafik hasil proyek sebagai bukti dan hindari memadatkan seluruh narasi pada slide.
-2. Periksa seluruh slide, lalu latihan perpindahan PowerPoint ke VS Code. Target akhir 9:15, sisakan 45 detik terhadap batas tugas.
+1. Buka PPT di folder presentations/. Teks dan tabel dapat diedit. Gunakan panel Notes atau Presenter View untuk narasi; notes slide 9 memuat panduan demo dan penutup lengkap. Slide tidak berpindah otomatis agar tempo bisa disesuaikan.
+2. Latihan perpindahan PowerPoint ke VS Code. Jika rekaman hanya memakai satu monitor, tampilkan Slide Show kepada penonton dan hindari merekam Presenter View yang memuat catatan pribadi. Target akhir 9:15, sisakan 45 detik terhadap batas tugas.
 3. Mahasiswa melengkapi deklarasi AI dan meninjau Word, kemudian ekspor PDF final. Jangan mengambil PDF QA lama sebagai versi pengumpulan jika Word telah berubah.
 4. Rekam satu video berisi PPT, demo dan penutup. Periksa audio, keterbacaan terminal, dan durasi akhir maksimal 10 menit.
 
-PPTX belum tersedia karena dependency loader/runtime `@oai/artifact-tool` yang diwajibkan skill Presentations tidak tersedia di sesi penyiapan ini. Storyboard, narasi dan script demo sudah dapat digunakan untuk latihan atau pembuatan slide di PowerPoint.
+PPT dibuat menggunakan Microsoft PowerPoint lokal setelah pengguna menyetujui penggantian runtime artifact-tool yang tidak tersedia. Seluruh sembilan slide diekspor oleh PowerPoint dan diperiksa secara visual. Raw data, notebook, model dan laporan Word tidak diubah oleh pembuatan slide.

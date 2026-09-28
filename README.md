@@ -9,7 +9,8 @@ Prototipe persiapan data dan rancangan analitik untuk dataset historis Brazilian
 - [Notebook 02](notebooks/02_Feature_Engineering_and_ML_Prep.ipynb): fitur per order, split hash, perbandingan bobot kelas dan pemilihan ambang pada validation.
 - [Notebook 03](notebooks/03_Graph_Analytics.ipynb): graf state asal–tujuan dan analisis rute dengan NetworkX.
 - [Panduan notebook](notebooks/README.md), [catatan presentasi](docs/presentation-notes.md), dan [status pekerjaan](docs/current-task.md).
-- [Storyboard dan alur video](docs/presentation-video.md): presentasi 7 menit, demo 2 menit, penutup 15 detik dalam satu rekaman. PPTX masih perlu dibuat.
+- [PPT Assignment I](presentations/Assignment_I_Olist_2702751284.pptx): sembilan slide 16:9 dengan speaker notes dan sumber.
+- [Storyboard dan alur video](docs/presentation-video.md): presentasi 7 menit, demo 2 menit, penutup 15 detik dalam satu rekaman.
 - `demo_assignment1.py`: pemeriksaan read-only atas konsistensi ringkasan hasil tersimpan; jalankan `python demo_assignment1.py`. Script ini tidak menjalankan ulang pipeline notebook dan tidak membutuhkan package tambahan.
 - `outputs_ml_graph/`: ringkasan hasil CSV/JSON kecil dari eksekusi lokal. Dataset fitur, daftar order per split, dan seluruh tabel ambang tidak dipublikasikan.
 
