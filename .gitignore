@@ -1,0 +1,85 @@
+# Local Python environment and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage/
+htmlcov/
+build/
+dist/
+*.egg-info/
+node_modules/
+bin/
+obj/
+
+# Credentials and private configuration
+.env
+.env.*
+!.env.example
+secrets.json
+credentials.*
+*.key
+*.pem
+*.pfx
+*.p12
+
+# Machine-specific configuration, runtimes, and generated files
+.vscode/
+.idea/
+.runtime/
+.report_review/
+.review/
+notebook_backups/
+output_backups/
+exports/
+datasets_raw/
+datasets_parquet/
+outputs_ml_graph/*.parquet/
+outputs_ml_graph/model_data_split_manifest.csv
+outputs_ml_graph/model_validation_thresholds.csv
+outputs_ml_graph/recovered_ingestion_audit.json
+outputs_ml_graph/model_improvement_summary.md
+*.parquet
+*.zip
+*.7z
+*.tar
+*.gz
+*.exe
+*.dll
+*.jar
+*.mp4
+*.mov
+*.mkv
+*.webm
+tmp/
+temp/
+logs/
+*.log
+~$*
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Course materials, superseded reports, and one-time maintenance scripts
+Sesi */
+[[]Submit FINAL Project[]]*
+*(old).docx
+COMP8035041 - Big Data Analytics - Assignment I Personal .pdf
+INITIALIZE_CODEX.md
+Review*.md
+configure_local.py
+import_colab_outputs.py
+improve_model.py
+incorporate_user_context.py
+polish_justification_layout.py
+revise_assignment_report.py
+strengthen_report_justification.py
+update_storage.py
+verify_justification_revision.py
+prepare_repository.py
+validate_repository.py

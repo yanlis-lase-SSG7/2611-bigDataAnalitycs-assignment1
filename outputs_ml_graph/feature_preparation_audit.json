@@ -1,0 +1,19 @@
+{
+  "delay_definition": "timestamp",
+  "delivered_orders_before_label_validation": 96478,
+  "excluded_missing_label_dates": 8,
+  "feature_orders": 96470,
+  "delayed_orders": 7826,
+  "timestamp_delayed_orders": 7826,
+  "calendar_date_delayed_orders": 6534,
+  "weight_imputation_method": "constant_500_g",
+  "weights_imputed": 16,
+  "multi_seller_orders": 1275,
+  "primary_item_rule": "minimum_order_item_id",
+  "orphan_counts": {
+    "order_customer": 0,
+    "item_order": 0,
+    "item_seller": 0,
+    "item_product": 0
+  }
+}

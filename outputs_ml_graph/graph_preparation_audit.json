@@ -1,0 +1,12 @@
+{
+  "delay_definition": "timestamp",
+  "primary_item_rule": "minimum_order_item_id",
+  "excluded_missing_label_dates": 8,
+  "graph_orders": 96470,
+  "delayed_orders": 7826,
+  "timestamp_delayed_orders": 7826,
+  "calendar_date_delayed_orders": 6534,
+  "multi_seller_orders": 1275,
+  "nodes": 27,
+  "routes": 409
+}

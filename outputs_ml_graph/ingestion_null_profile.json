@@ -1,0 +1,72 @@
+{
+  "olist_customers_dataset": {
+    "customer_id": 0,
+    "customer_unique_id": 0,
+    "customer_zip_code_prefix": 0,
+    "customer_city": 0,
+    "customer_state": 0
+  },
+  "olist_geolocation_dataset": {
+    "geolocation_zip_code_prefix": 0,
+    "geolocation_lat": 0,
+    "geolocation_lng": 0,
+    "geolocation_city": 0,
+    "geolocation_state": 0
+  },
+  "olist_order_items_dataset": {
+    "order_id": 0,
+    "order_item_id": 0,
+    "product_id": 0,
+    "seller_id": 0,
+    "shipping_limit_date": 0,
+    "price": 0,
+    "freight_value": 0
+  },
+  "olist_order_payments_dataset": {
+    "order_id": 0,
+    "payment_sequential": 0,
+    "payment_type": 0,
+    "payment_installments": 0,
+    "payment_value": 0
+  },
+  "olist_order_reviews_dataset": {
+    "review_id": 0,
+    "order_id": 0,
+    "review_score": 0,
+    "review_comment_title": 87656,
+    "review_comment_message": 58247,
+    "review_creation_date": 0,
+    "review_answer_timestamp": 0
+  },
+  "olist_orders_dataset": {
+    "order_id": 0,
+    "customer_id": 0,
+    "order_status": 0,
+    "order_purchase_timestamp": 0,
+    "order_approved_at": 160,
+    "order_delivered_carrier_date": 1783,
+    "order_delivered_customer_date": 2965,
+    "order_estimated_delivery_date": 0
+  },
+  "olist_products_dataset": {
+    "product_id": 0,
+    "product_category_name": 610,
+    "product_name_lenght": 610,
+    "product_description_lenght": 610,
+    "product_photos_qty": 610,
+    "product_weight_g": 2,
+    "product_length_cm": 2,
+    "product_height_cm": 2,
+    "product_width_cm": 2
+  },
+  "olist_sellers_dataset": {
+    "seller_id": 0,
+    "seller_zip_code_prefix": 0,
+    "seller_city": 0,
+    "seller_state": 0
+  },
+  "product_category_name_translation": {
+    "product_category_name": 0,
+    "product_category_name_english": 0
+  }
+}
