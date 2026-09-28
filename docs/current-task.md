@@ -4,39 +4,46 @@ Last updated: 2026-09-28
 
 ## Current Objective
 
-Make Codex continuity automatic across office and home laptops through repository context, continuous documentation maintenance, and synchronization before authorized commits/pushes.
+Publish the reviewed report revision and prepare a short Assignment I presentation followed by a live demo in the same video, within the 10-minute limit.
 
 ## Current Status
 
-Completed
+Ready for review
 
 ## Completed
 
-- Replaced manual command-triggered workflow with automatic session initialization and ongoing documentation maintenance in AGENTS.md.
-- Defined automatic pre-commit documentation synchronization and pre-push verification, preserving authorization scope and unrelated local work.
-- Replaced historical initialization/cleanup summaries with current development context and the required task-state structure.
-- Documented normal cross-device usage in README. No notebook logic, dependencies, Git ignore rules or runtime configuration changed.
-- Final review confirmed the automatic workflow matches the requested behavior; user authorized commit and push.
+- Strengthened section 1.2 using DHL Group 2026 survey context and OECD 2019 platform trust/reviews discussion, with explicit limits on transfer to historical Olist data.
+- Connected business priorities to stakeholder decisions and consistent success measures; no unmeasured cost savings or numeric intervention targets claimed.
+- Removed nine uncited bibliography entries; all 14 remaining references have body citations.
+- Corrected graph labels implying observed hubs/bottlenecks. Kept all table values, notebook source, analytics outputs and student declaration wording unchanged.
+- Updated presentation notes. Rendered and visually inspected all 19 report pages; bibliography/form pages rechecked after final layout corrections.
+- Prepared docs/presentation-video.md: nine-slide storyboard, narration and sources, seven-minute presentation followed by a two-minute demo and 15-second closing.
+- Added demo_assignment1.py, a standard-library read-only checker for saved ingestion/model/graph reports. It does not rerun the analytics pipeline.
 
 ## Remaining Work
 
-- No workflow implementation or review work remains. Publication is checked against actual Git state rather than a historical session entry.
-- Project follow-up: prepare Assignment I slides/video (maximum 10 minutes) and complete the student AI declaration before submission. These deliverables were not created by this workflow task.
+- Student completes AI declaration; Codex did not select a contribution percentage.
+- Create PPTX from the prepared storyboard, review slides, rehearse and record one video (maximum 10 minutes). PPTX authoring runtime is unavailable in this session.
+- Export submission PDF after final student edits.
 
 ## Technical Decisions
 
-- Actual source and Git history take precedence over stale documentation or chat history.
-- Keep task state concise; durable guidance belongs in README, AGENTS.md, notebooks/README.md and docs/runtime-prerequisites.md.
-- Documentation maintenance is automatic during Codex work; commits and publication still require user authorization.
-- Commit-only requests do not authorize pushing. Push requests include needed documentation synchronization, without silently committing unrelated implementation changes.
-- main tracks origin/main at https://github.com/yanlis-lase-SSG7/2611-bigDataAnalitycs-assignment1.git. Inspect Git status/history to determine the current publication state.
-- Datasets, .venv, .runtime and large outputs remain local; small aggregate reports and saved notebook outputs are tracked. No Git LFS.
+- External surveys explain market relevance, not Olist customer behavior in 2016–2018. Faster delivery preference differs from lateness against an estimated timestamp.
+- Review differences are associations; state graphs do not prove transit, hub locations or physical bottlenecks. Intervention impacts/costs are not measured.
+- Verified results remain authoritative: 96,470 labeled orders, 7,826 delayed; review 4.2943 versus 2.5665; Parquet savings 54.93%.
+- Student declaration wording preserved; form layout corrections only.
+- Local project root/BDA_PROJECT_DIR controls reads/writes. Datasets/runtime and generated QA remain ignored. main tracks origin/main; publication requires user authorization.
+- User authorized commit and push of this checkpoint. Determine publication state from actual Git HEAD, origin/main and working tree rather than a historical documentation entry.
+- Demo recalculates metrics from saved aggregates and checks cross-report consistency. It does not prove current raw/Parquet contents, split disjointness or absence of leakage. Full notebook execution occurred previously.
 
 ## Files Changed
 
-- AGENTS.md: automatic session, documentation, commit/push and task-transition policies.
-- docs/current-task.md: current-state structure; obsolete history removed.
-- README.md: normal office/home continuity workflow and local setup limitation.
+- Laporan Big Data Analytics - 2702751284.docx: section 1.2, references, graph labels and layout.
+- docs/presentation-notes.md: market/business context aligned with report.
+- docs/presentation-video.md: slide storyboard, timed narration, demo and recording procedure.
+- demo_assignment1.py: read-only saved-result checker.
+- README.md: links to video preparation and demo usage.
+- docs/current-task.md: current video preparation and publication state.
 
 ## Known Issues / Risks
 
@@ -44,6 +51,7 @@ Completed
 - Cross-device updates require successful commit/push and pull. Another laptop needs datasets, dependencies and Windows runtime separately to execute notebooks.
 - Spark remains a one-machine prototype; warehouse is conceptual. NoSQL/graph database deployment and dashboard remain proposed. Low model precision, temporal validation and intervention cost evaluation remain future work.
 - AI declaration remains the student's responsibility; do not determine its percentage.
+- The Presentations skill requires load_workspace_dependencies and its artifact-tool runtime; neither is available here. No PPTX has been authored. Storyboard/narration and demo are available for the next step.
 
 ## Validation
 
@@ -53,11 +61,11 @@ NOT AVAILABLE — notebook/Python project without a build step.
 
 ### Tests
 
-NOT RUN — full analytics pipeline unnecessary for documentation-only changes. Saved outputs remain from prior local execution.
+PASS — demo all/ingestion/model/graph modes succeed; corrupted ingestion status, confusion counts and graph counts fail; source report hashes unchanged. Full analytics pipeline NOT RUN because no analytic logic changed.
 
 ### Lint / Static Analysis
 
-PASS — workflow sections and task-state structure checked; eight local Markdown links resolve; all three notebooks pass schema/cell syntax checks and contain no saved errors. Changed documentation was reviewed for obvious secrets and inappropriate generated files; only AGENTS.md, README.md and docs/current-task.md are included. Whitespace checks pass.
+PASS — report citations, unchanged table values, current metrics and declaration wording verified; notebook source unchanged. All 19 Word-rendered pages inspected; form clipping corrected. Demo/notebook Python syntax and staged whitespace checks pass. Six intended files reviewed, all below 5 MiB, with no credentials found by content review and heuristic scan. Report matches the reviewed SHA-256. Local QA in .report_review remains ignored.
 
 ## Environment Notes
 
@@ -68,7 +76,7 @@ PASS — workflow sections and task-state structure checked; eight local Markdow
 
 ## Recommended Next Step
 
-On another laptop, pull the latest main, open VS Code and give a normal task. Next project work is Assignment I slides/video and the student AI declaration. Codex should replace this completed objective when that work begins, preserving relevant unresolved project notes.
+Create PPTX from docs/presentation-video.md when the required authoring runtime is available, rehearse the demo, complete the student declaration and record the presentation/demo as one video.
 
 ## Useful Commands
 
@@ -79,6 +87,7 @@ git diff
 git diff --cached
 git pull --ff-only
 .\.venv\Scripts\python.exe run_local_notebooks.py
+.\.venv\Scripts\python.exe demo_assignment1.py
 ```
 
 The runner executes/saves all three notebooks and replaces generated outputs. Run only when intended and local prerequisites are available.

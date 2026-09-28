@@ -1,6 +1,14 @@
 # Catatan presentasi: justifikasi studi Olist
 
-Gunakan bersama Bab 1 dan bagian 2.4 laporan terbaru. Durasi bagian ini sekitar 3–4 menit; seluruh video Assignment I tetap maksimal 10 menit. Sesuaikan kalimat dengan pemahaman sendiri.
+Gunakan bersama Bab 1 dan bagian 2.4 laporan terbaru. Catatan ini merupakan bahan justifikasi dan jawaban dosen, bukan tambahan durasi di luar presentasi. Alur sembilan slide dan demo dalam satu video ada di [presentation-video.md](presentation-video.md), dengan target total 9:15 dan batas 10 menit. Sesuaikan kalimat dengan pemahaman sendiri.
+
+## Konteks pasar dan business drivers
+
+“Dua sumber eksternal membantu menjelaskan relevansi masalah. Survei DHL 2026 mencakup 29.000 pembeli online dan 5.800 bisnis di 29 negara; 20% pembeli menyatakan pengiriman lebih cepat dapat mendorong penyelesaian pembelian. OECD 2019 menjelaskan peran ulasan dan rating dalam membangun kepercayaan pengguna platform. Ini konteks pasar global, bukan survei pelanggan Olist 2016–2018.
+
+Karena itu, saya menggunakan baseline Olist untuk menentukan prioritas operasional: investigasi rute SP–RJ, peninjauan order berisiko, dan pelaporan agregat. Keberhasilan yang dituju adalah penurunan delay rate dan evaluasi review pada populasi yang sebanding setelah intervensi. Saya belum menetapkan persentase penurunan atau penghematan biaya karena belum ada intervensi maupun data kompensasi.”
+
+Sumber untuk Bab 1.2: [DHL Group, 2 Juni 2026](https://group.dhl.com/en/media-relations/press-releases/2026/dhl-ecommerce-trends-report-2026-old-rules-do-not-apply-in-the-age-of-ai.html) dan [OECD, Unpacking E-commerce, 2019](https://doi.org/10.1787/23561431-en). Preferensi pengiriman cepat berbeda dari keterlambatan terhadap estimasi; hubungan review–delay pada proyek tetap berupa asosiasi.
 
 ## Tujuan dan pengguna
 
@@ -37,4 +45,4 @@ Parquet sudah diimplementasikan. Warehouse adalah rancangan konseptual; NetworkX
 - Simulasi empat database diganti dengan status implementasi yang benar; deployment tahap berikutnya dinyatakan sebagai opsi.
 - Potensi migrasi Spark tidak dianggap otomatis atau tanpa perubahan, dan pertumbuhan Olist ke terabyte tidak dianggap temuan dataset historis.
 
-Rujukan teknis dan bukti perbandingan tersedia dalam laporan dan Kerangka Justifikasi Teknologi dan Rancangan.md.
+Rujukan teknis dan bukti perbandingan tersedia dalam laporan bagian 2.4 dan notebook terkait. Alur rekaman lengkap tersedia di docs/presentation-video.md.
