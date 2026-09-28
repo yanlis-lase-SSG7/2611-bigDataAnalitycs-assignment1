@@ -50,3 +50,11 @@ Sumber notebook sudah menggunakan penemuan root/`BDA_PROJECT_DIR` untuk lintas p
 Dataset raw/Parquet, `.venv`, `.runtime`, backup, ekspor besar, materi kuliah, file sementara, serta script migrasi/revisi sekali pakai diabaikan dari Git. Tidak menggunakan Git LFS. Folder tersebut dapat dipulihkan terpisah atau hasilnya dibuat ulang. Repository menyertakan notebook dengan output tersimpan dan ringkasan hasil untuk memudahkan pemeriksaan dosen.
 
 Pengembangan berikutnya: slide/video maksimal 10 menit, deklarasi AI oleh mahasiswa, kemudian validasi temporal dan analisis biaya intervensi sesuai tahap tugas berikutnya. Konteks lintas perangkat dipelihara melalui `AGENTS.md` dan `docs/current-task.md`.
+
+## Workflow Codex lintas perangkat
+
+Di kantor, berikan tugas biasa kepada Codex. Codex otomatis membaca AGENTS.md, status tugas, Git dan berkas terkait sebelum bekerja, lalu memperbarui dokumentasi yang menjadi tidak sesuai. Saat diminta commit atau commit dan push, Codex menyinkronkan dokumentasi dan melakukan validasi yang sesuai sebelum menyimpan perubahan. Permintaan commit saja tidak memicu push.
+
+Di rumah, lakukan `git pull` / Get Latest, buka proyek di VS Code, lalu langsung berikan tugas berikutnya. Tidak perlu perintah khusus resume atau handoff. Source dan riwayat Git menjadi acuan utama; docs/current-task.md menyimpan keadaan pekerjaan saat ini, bukan catatan setiap sesi.
+
+Aturan ini berlaku pada sesi Codex yang membaca repository; tidak memasang layanan otomatis atau Git hook. Perubahan baru harus di-commit dan di-push agar tersedia di laptop lain. Dataset, environment dan runtime tetap perlu dipulihkan terpisah sebagaimana panduan di atas.
