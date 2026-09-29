@@ -4,7 +4,7 @@ Last updated: 2026-09-29
 
 ## Current Objective
 
-Publish automatic Windows runtime setup and lecturer packaging guidance so the project can be rerun without receiving machine-local Java/Spark binaries.
+Synchronize the renamed presentation and submission state, preserving automatic runtime setup and lecturer packaging guidance.
 
 ## Current Status
 
@@ -20,12 +20,14 @@ Ready for review
 - Existing conflicting runtime files are preserved; bad downloaded/cache checksums stop setup. Four integrity/preservation tests pass.
 - Updated README, notebook guide and runtime guide with setup commands and lecturer ZIP contents. Dataset still supplied separately; .venv/.runtime excluded from ZIP and Git.
 - Report PDF, Word and 11-slide PPT remain unchanged; narration is 1,238 words with a 9:30 target, not a measured recording duration.
+- User renamed the PPT to presentations/Laporan Big Data Analytics - 2702751284.pptx. Bytes match the previously committed deck exactly; README and recording guide links now use the new name.
+- User reports video recording is complete and SharePoint contains the submission materials. Remote file contents, permissions and actual video duration have not been independently verified.
 
 ## Remaining Work
 
 - User reviews setup and lecturer packaging guidance on the target device. Commit/push is authorized; determine publication state from actual Git HEAD, origin/main and working tree.
 - Create lecturer ZIP when requested; upload/SharePoint contents have not been verified.
-- Student rehearses/records video (maximum 10 minutes), completes AI declaration and regenerates report PDF if changed.
+- Student verifies SharePoint access, video duration (maximum 10 minutes), AI declaration and final PDF; upload the PDF to LMS and include GitHub/SharePoint links in the answer.
 
 ## Technical Decisions
 
@@ -37,11 +39,9 @@ Ready for review
 
 ## Files Changed
 
-- setup_runtime.py
-- tests/test_setup_runtime.py
+- presentations/Assignment_I_Olist_2702751284.pptx -> presentations/Laporan Big Data Analytics - 2702751284.pptx (identical content)
 - README.md
-- notebooks/README.md
-- docs/runtime-prerequisites.md
+- docs/presentation-video.md
 - docs/current-task.md
 
 ## Known Issues / Risks
@@ -49,7 +49,7 @@ Ready for review
 - First setup needs internet and disk space for Python dependencies, the approximately 187 MB Java archive, runtime and staging copies.
 - Fresh runtime validated on the current Windows computer with existing Python dependencies, not on an independent lecturer device or newly installed Python environment.
 - If existing unrecorded runtime differs, preserve/rename the indicated folder before retrying; script does not overwrite it.
-- Video duration/audio/privacy of presenter notes and student AI declaration remain user review items.
+- Video is recorded according to the user; duration/audio/privacy of presenter notes, SharePoint access and student AI declaration remain user review items.
 
 ## Validation
 
@@ -63,7 +63,7 @@ PASS — four unittest safety checks (preserve conflicting local work, reject co
 
 ### Lint / Static Analysis
 
-PASS — Python compile checks and git diff --check. Final source/documentation diff reviewed; dataset, runtime and QA artifacts remain ignored. Publication state is verified from Git separately.
+PASS — current PPT is byte-identical to the committed deck (84,928 bytes); ZIP integrity passes, with 11 slides and no embedded files. Presentation links updated and final diff/whitespace reviewed. Prior Python checks remain valid; no code changes. Dataset, runtime and QA artifacts remain ignored. Publication state is verified from Git separately.
 
 ## Environment Notes
 

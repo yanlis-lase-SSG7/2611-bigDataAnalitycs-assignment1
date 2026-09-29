@@ -1,6 +1,6 @@
 # Panduan rekaman Assignment I: seluruhnya di PowerPoint
 
-[Buka PPT](../presentations/Assignment_I_Olist_2702751284.pptx). Versi terbaru terdiri dari 11 slide. Seluruh hasil demo yang sudah dijalankan masuk ke slide; tidak perlu berpindah ke VS Code saat merekam. Speaker notes menggunakan bahasa percakapan dan dapat dibaca langsung. Salinan narasi ada di [presentation-notes.md](presentation-notes.md).
+[Buka PPT](../presentations/Laporan%20Big%20Data%20Analytics%20-%202702751284.pptx). Versi terbaru terdiri dari 11 slide. Seluruh hasil demo yang sudah dijalankan masuk ke slide; tidak perlu berpindah ke VS Code saat merekam. Speaker notes menggunakan bahasa percakapan dan dapat dibaca langsung. Salinan narasi ada di [presentation-notes.md](presentation-notes.md).
 
 Target total 9 menit 30 detik, dengan batas tugas 10 menit. Target ini belum merupakan durasi rekaman terukur. Narasi sekitar 1.238 kata membutuhkan rata-rata sekitar 130 kata per menit untuk target tersebut. Sisakan jeda singkat dan ukur saat latihan; jika bacaan lebih lambat, ringkas penjelasan daripada mempercepat seluruh video.
 

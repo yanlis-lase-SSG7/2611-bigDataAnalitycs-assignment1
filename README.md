@@ -10,7 +10,7 @@ Prototipe persiapan data dan rancangan analitik untuk dataset historis Brazilian
 - [Notebook 02](notebooks/02_Feature_Engineering_and_ML_Prep.ipynb): fitur per order, split hash, perbandingan bobot kelas dan pemilihan ambang pada validation.
 - [Notebook 03](notebooks/03_Graph_Analytics.ipynb): graf state asal–tujuan dan analisis rute dengan NetworkX.
 - [Panduan notebook](notebooks/README.md), [catatan presentasi](docs/presentation-notes.md), dan [status pekerjaan](docs/current-task.md).
-- [PPT Assignment I](presentations/Assignment_I_Olist_2702751284.pptx): 11 slide 16:9 dengan speaker notes natural, penjelasan proyek/tech stack, dan hasil demo yang telah dijalankan.
+- [PPT Assignment I](presentations/Laporan%20Big%20Data%20Analytics%20-%202702751284.pptx): 11 slide 16:9 dengan speaker notes natural, penjelasan proyek/tech stack, dan hasil demo yang telah dijalankan.
 - [Panduan rekaman](docs/presentation-video.md) dan [naskah siap baca](docs/presentation-notes.md): seluruh presentasi di PowerPoint, target 9 menit 30 detik tanpa perpindahan ke VS Code.
 - `demo_assignment1.py`: pemeriksaan read-only atas konsistensi ringkasan hasil tersimpan; jalankan `python demo_assignment1.py`. Script ini tidak menjalankan ulang pipeline notebook dan tidak membutuhkan package tambahan.
 - `outputs_ml_graph/`: ringkasan hasil CSV/JSON kecil dari eksekusi lokal. Dataset fitur, daftar order per split, dan seluruh tabel ambang tidak dipublikasikan.
@@ -54,7 +54,7 @@ Sumber notebook sudah menggunakan penemuan root/`BDA_PROJECT_DIR` untuk lintas p
 
 Dataset raw/Parquet, `.venv`, `.runtime`, backup, ekspor besar, materi kuliah, file sementara, serta script migrasi/revisi sekali pakai diabaikan dari Git. Tidak menggunakan Git LFS. Folder tersebut dapat dipulihkan terpisah atau hasilnya dibuat ulang. Repository menyertakan notebook dengan output tersimpan dan ringkasan hasil untuk memudahkan pemeriksaan dosen.
 
-Pengembangan berikutnya: slide/video maksimal 10 menit, deklarasi AI oleh mahasiswa, kemudian validasi temporal dan analisis biaya intervensi sesuai tahap tugas berikutnya. Konteks lintas perangkat dipelihara melalui `AGENTS.md` dan `docs/current-task.md`.
+Mahasiswa menyatakan video sudah dibuat dan tersedia di SharePoint. Sebelum pengumpulan LMS, periksa akses tautan, durasi maksimal 10 menit dan deklarasi AI. Pengembangan berikutnya: validasi temporal dan analisis biaya intervensi sesuai tahap tugas berikutnya. Konteks lintas perangkat dipelihara melalui `AGENTS.md` dan `docs/current-task.md`.
 
 ## Workflow Codex lintas perangkat
 
