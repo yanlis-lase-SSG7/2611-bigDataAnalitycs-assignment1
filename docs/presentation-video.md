@@ -2,23 +2,23 @@
 
 [Buka PPT](../presentations/Assignment_I_Olist_2702751284.pptx). Versi terbaru terdiri dari 11 slide. Seluruh hasil demo yang sudah dijalankan masuk ke slide; tidak perlu berpindah ke VS Code saat merekam. Speaker notes menggunakan bahasa percakapan dan dapat dibaca langsung. Salinan narasi ada di [presentation-notes.md](presentation-notes.md).
 
-Target total 9 menit 10 detik, dengan batas tugas 10 menit. Target ini belum merupakan durasi rekaman terukur. Sekitar 1.040 kata narasi menyediakan ruang untuk jeda singkat; latihan dengan stopwatch tetap diperlukan.
+Target total 9 menit 30 detik, dengan batas tugas 10 menit. Target ini belum merupakan durasi rekaman terukur. Narasi sekitar 1.238 kata membutuhkan rata-rata sekitar 130 kata per menit untuk target tersebut. Sisakan jeda singkat dan ukur saat latihan; jika bacaan lebih lambat, ringkas penjelasan daripada mempercepat seluruh video.
 
 ## Alur slide
 
 | Slide | Isi | Target waktu |
 |---|---|---|
-| 1 | Analitik keterlambatan pengiriman Olist | 00:00–00:20 |
-| 2 | Latar belakang masalah | 00:20–01:10 |
-| 3 | Tujuan proyek dan pengguna hasil | 01:10–01:55 |
-| 4 | Konteks pasar dan urgensi bisnis | 01:55–02:30 |
-| 5 | Tech stack dan alasan pemilihan | 02:30–03:40 |
-| 6 | Alur pipeline dan batas implementasi | 03:40–04:40 |
-| 7 | Hasil ingestion dan kualitas data | 04:40–05:40 |
-| 8 | Tata kelola dan perlindungan data | 05:40–06:20 |
-| 9 | Hasil model dan pemilihan ambang | 06:20–07:30 |
-| 10 | Hasil graf dan prioritas rute | 07:30–08:25 |
-| 11 | Ringkasan validasi dan langkah berikutnya | 08:25–09:10 |
+| 1 | Analitik keterlambatan pengiriman Olist | 00:00–00:25 |
+| 2 | Latar belakang masalah | 00:25–01:20 |
+| 3 | Tujuan proyek dan pengguna hasil | 01:20–02:05 |
+| 4 | Konteks pasar dan urgensi bisnis | 02:05–02:40 |
+| 5 | Tech stack dan alasan pemilihan | 02:40–04:00 |
+| 6 | Alur pipeline dan batas implementasi | 04:00–05:00 |
+| 7 | Hasil ingestion dan kualitas data | 05:00–05:50 |
+| 8 | Tata kelola dan perlindungan data | 05:50–06:35 |
+| 9 | Hasil model dan pemilihan ambang | 06:35–07:55 |
+| 10 | Hasil graf dan prioritas rute | 07:55–08:50 |
+| 11 | Ringkasan validasi dan langkah berikutnya | 08:50–09:30 |
 
 ## Membaca notes tanpa menampilkannya pada rekaman
 

@@ -1,10 +1,10 @@
 # Current Task
 
-Last updated: 2026-09-28
+Last updated: 2026-09-29
 
 ## Current Objective
 
-Revise Assignment I presentation into a complete PowerPoint-only explanation with conversational speaker notes, detailed project/technology rationale and previously executed demo results; commit and push the reviewed changes.
+Clarify the 11-slide presenter narration using everyday Indonesian, concrete explanations of the workflow and metrics, and a realistic reading pace within the 10-minute recording limit.
 
 ## Current Status
 
@@ -12,17 +12,15 @@ Ready for review
 
 ## Completed
 
-- Updated presentations/Assignment_I_Olist_2702751284.pptx to 11 editable 16:9 slides.
-- Rewrote speaker notes as natural Indonesian narration in short paragraphs. Sources and target timing appear separately after narration.
-- Explained the project, background problem, goals, stakeholders, pipeline/grain, tech stack and rationale, governance and implementation limits.
-- Incorporated the user's successful ingestion/model/graph demo results into slides 7/9/10, with a PASS summary and closing on slide 11.
-- Replaced the previous PowerPoint-to-VS-Code recording flow with a complete PowerPoint-only presentation. Updated README, narration copy and recording guide.
-- Exported/inspected all slide layouts in native PowerPoint. Fixed the tech-stack table/caption overlap and rechecked the corrected slide. Final notes-only revision preserves visible slide content.
-- Validated package, geometry, notes/source/timing consistency and metrics. New PPT matches the reviewed candidate byte-for-byte; previous PPT is preserved in Git and ignored QA backup.
+- Updated speaker notes in the existing 11-slide PPT through native PowerPoint; visible slide text, tables and layouts preserved.
+- Made explanations more concrete: timestamp delay/baseline, aggregate-before-join with repeated values, technology roles, train/validation/test, threshold, precision/recall and false positives, state graph and the meaning of PASS.
+- Narration has 1,238 words in short paragraphs, with references/timing separate. Reading target changed to 9:30 (approximately 130 words/minute); actual recording must be measured.
+- Updated the exact narration copy and recording timing guide. Added three private comprehension prompts to the Markdown narration for rehearsal, outside spoken text.
+- Exported all 11 slides and verified their pixels are identical to the previously reviewed renders. Package and note/source/timing checks pass.
 
 ## Remaining Work
 
-- User rehearses the 1,040-word narration with a stopwatch and records the video, maximum 10 minutes. 9:10 is a target, not measured recording duration.
+- User rehearses the 1,238-word narration with a stopwatch and records the video, maximum 10 minutes. 9:30 is a target, not measured recording duration; a slower pace requires shortening the explanation.
 - Confirm final recording shows the slides, with notes/Presenter View only on the private display, and verify audio/readability.
 - Student completes AI declaration and exports final submission PDF after final Word edits.
 
@@ -34,14 +32,14 @@ Ready for review
 - Spark runs local[4] on one machine. pandas remains suitable for this dataset size. Warehouse is conceptual; NoSQL/physical graph database/dashboard are proposed.
 - Baseline: 96,470 labels / 7,826 delayed, reviews 4.2943 versus 2.5665, storage savings 54.93%. Model: unweighted RF, threshold 0.099536, validation F1 0.2168, test recall 45.41%, precision 14.47%, 4,186 FP. Graph: 27 nodes / 409 routes, SP–RJ 8,158 orders / 15.49% delay.
 - Review associations do not establish causation; state graph does not show transit or physical hub locations. External surveys provide context distinct from Olist data.
-- User explicitly authorized commit and push. Actual Git HEAD, origin/main and status determine publication state.
+- User authorized commit and push of the narration revision. Determine publication state from actual HEAD, origin/main and working tree. Pre-existing Word/PDF changes remain outside this revision.
 
 ## Files Changed
 
-- presentations/Assignment_I_Olist_2702751284.pptx: 11-slide full-PPT presentation.
+- presentations/Assignment_I_Olist_2702751284.pptx: updated notes only; visible slides unchanged.
 - docs/presentation-notes.md: exact spoken narration and sources.
 - docs/presentation-video.md: timing and private-notes recording guidance.
-- README.md: revised presentation/recording links.
+- README.md: updated 9:30 duration target.
 - docs/current-task.md: current scope and verified state.
 
 ## Known Issues / Risks
@@ -50,31 +48,32 @@ Ready for review
 - Low model precision, temporal validation and intervention cost evaluation remain future work; operational impact and cluster scalability are not demonstrated.
 - Student fills AI declaration; do not choose the percentage.
 - Git excludes datasets/runtime/generated QA. Another computer needs local prerequisites separately to run notebooks.
+- Pre-existing user changes remain local in the Word report, plus an untracked submission PDF. They are excluded from the narration commit; review/publish separately if requested.
 
 ## Validation
 
 ### Build
 
-PASS — Microsoft PowerPoint authored/exported the 11-slide deck. Reviewed candidate copied unchanged to the canonical PPT path.
+PASS — Microsoft PowerPoint edited notes, saved a new candidate and exported all 11 slides. Verified candidate copied to the canonical PPT path.
 
 ### Tests
 
-PASS — all 11 notes match the narration/source/timing data; metrics match saved reports and user's demo; PPT-only flow checked. No notebook/model logic changed, so full analytics pipeline NOT RUN.
+PASS — all 11 notes match the narration/source/timing data; all 11 exported slide images are pixel-identical to the reviewed originals. Text encoding and 570-second target verified. No notebook/model logic changed, so full analytics pipeline NOT RUN.
 
 ### Lint / Static Analysis
 
-PASS — package integrity and layout/heading validators: zero findings and zero warnings. All visible slide content inspected, final changed slide rechecked. Whitespace checks pass. Word and notebook files unchanged. Generated QA/scripts/backups remain ignored.
+PASS — package integrity validator reports zero findings. Visible slide texts and rendered pixels unchanged, so previous visual layout review remains valid. Whitespace checks pass. Generated QA/scripts/backups remain ignored. Pre-existing Word/PDF user changes remain separate.
 
 ## Environment Notes
 
 - Windows, Microsoft PowerPoint, Python 3.11 in .venv. PowerPoint authoring/export session closed after saving.
-- .report_review/full_ppt/ contains ignored QA, source JSON, intermediate decks and old PPT backup; not required for viewing/rehearsing the deliverable.
+- .report_review/notes_20260929/ contains ignored notes data, before/candidate decks, native renders and verification.json. These are not required to view or rehearse the deliverable.
 - Notebook stack remains PySpark 4.0.4, Java 17, pandas and NetworkX. See docs/runtime-prerequisites.md.
 - Local project/BDA_PROJECT_DIR controls reads/writes. No Colab/Google Drive. main tracks origin/main.
 
 ## Recommended Next Step
 
-Rehearse the revised PPT using conversational notes, perform a short recording test to keep notes off-screen, then record the entire presentation in PowerPoint and check duration/audio.
+Rehearse the clearer narration at a comfortable pace. Explain the three comprehension prompts in docs/presentation-notes.md in your own words, then perform a recording test and measure the full presentation duration.
 
 ## Useful Commands
 

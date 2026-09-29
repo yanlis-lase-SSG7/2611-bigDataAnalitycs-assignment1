@@ -10,7 +10,7 @@ Prototipe persiapan data dan rancangan analitik untuk dataset historis Brazilian
 - [Notebook 03](notebooks/03_Graph_Analytics.ipynb): graf state asal–tujuan dan analisis rute dengan NetworkX.
 - [Panduan notebook](notebooks/README.md), [catatan presentasi](docs/presentation-notes.md), dan [status pekerjaan](docs/current-task.md).
 - [PPT Assignment I](presentations/Assignment_I_Olist_2702751284.pptx): 11 slide 16:9 dengan speaker notes natural, penjelasan proyek/tech stack, dan hasil demo yang telah dijalankan.
-- [Panduan rekaman](docs/presentation-video.md) dan [naskah siap baca](docs/presentation-notes.md): seluruh presentasi di PowerPoint, target 9 menit 10 detik tanpa perpindahan ke VS Code.
+- [Panduan rekaman](docs/presentation-video.md) dan [naskah siap baca](docs/presentation-notes.md): seluruh presentasi di PowerPoint, target 9 menit 30 detik tanpa perpindahan ke VS Code.
 - `demo_assignment1.py`: pemeriksaan read-only atas konsistensi ringkasan hasil tersimpan; jalankan `python demo_assignment1.py`. Script ini tidak menjalankan ulang pipeline notebook dan tidak membutuhkan package tambahan.
 - `outputs_ml_graph/`: ringkasan hasil CSV/JSON kecil dari eksekusi lokal. Dataset fitur, daftar order per split, dan seluruh tabel ambang tidak dipublikasikan.
 
