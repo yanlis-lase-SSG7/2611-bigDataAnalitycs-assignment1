@@ -5,6 +5,7 @@ Prototipe persiapan data dan rancangan analitik untuk dataset historis Brazilian
 ## Berkas utama
 
 - [Laporan final](Laporan%20Big%20Data%20Analytics%20-%202702751284.docx): Bab 1–4, justifikasi teknologi, bukti data, batas implementasi, dan referensi. Deklarasi AI masih harus dilengkapi mahasiswa.
+- [Laporan PDF](Laporan%20Big%20Data%20Analytics%20-%202702751284.pdf): ekspor laporan 19 halaman. Periksa kembali deklarasi mahasiswa sebelum pengumpulan; ekspor ulang jika Word diubah.
 - [Notebook 01](notebooks/01_Ingestion_and_Parquet_Conversion.ipynb): ingestion sembilan CSV, validasi, konversi Parquet Snappy.
 - [Notebook 02](notebooks/02_Feature_Engineering_and_ML_Prep.ipynb): fitur per order, split hash, perbandingan bobot kelas dan pemilihan ambang pada validation.
 - [Notebook 03](notebooks/03_Graph_Analytics.ipynb): graf state asal–tujuan dan analisis rute dengan NetworkX.

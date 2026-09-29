@@ -4,7 +4,7 @@ Last updated: 2026-09-29
 
 ## Current Objective
 
-Clarify the 11-slide presenter narration using everyday Indonesian, concrete explanations of the workflow and metrics, and a realistic reading pace within the 10-minute recording limit.
+Synchronize and publish all remaining report deliverables, preserving the clarified 11-slide narration and recording guidance.
 
 ## Current Status
 
@@ -17,12 +17,14 @@ Ready for review
 - Narration has 1,238 words in short paragraphs, with references/timing separate. Reading target changed to 9:30 (approximately 130 words/minute); actual recording must be measured.
 - Updated the exact narration copy and recording timing guide. Added three private comprehension prompts to the Markdown narration for rehearsal, outside spoken text.
 - Exported all 11 slides and verified their pixels are identical to the previously reviewed renders. Package and note/source/timing checks pass.
+- Reviewed remaining user-saved Word/PDF files. Word paragraph text is unchanged from the previous committed report; the remaining change is in the document package/formatting. PDF has 19 readable pages and matching substantive long paragraphs/key metrics; TOC/index/header extraction differs.
+- Added the report PDF link in README. The previously observed untracked PPT copy is no longer present; no copy file is pending publication.
 
 ## Remaining Work
 
 - User rehearses the 1,238-word narration with a stopwatch and records the video, maximum 10 minutes. 9:30 is a target, not measured recording duration; a slower pace requires shortening the explanation.
 - Confirm final recording shows the slides, with notes/Presenter View only on the private display, and verify audio/readability.
-- Student completes AI declaration and exports final submission PDF after final Word edits.
+- Student reviews/completes AI declaration before submission. A PDF export is available; regenerate it if subsequent Word edits occur.
 
 ## Technical Decisions
 
@@ -32,15 +34,14 @@ Ready for review
 - Spark runs local[4] on one machine. pandas remains suitable for this dataset size. Warehouse is conceptual; NoSQL/physical graph database/dashboard are proposed.
 - Baseline: 96,470 labels / 7,826 delayed, reviews 4.2943 versus 2.5665, storage savings 54.93%. Model: unweighted RF, threshold 0.099536, validation F1 0.2168, test recall 45.41%, precision 14.47%, 4,186 FP. Graph: 27 nodes / 409 routes, SP–RJ 8,158 orders / 15.49% delay.
 - Review associations do not establish causation; state graph does not show transit or physical hub locations. External surveys provide context distinct from Olist data.
-- User authorized commit and push of the narration revision. Determine publication state from actual HEAD, origin/main and working tree. Pre-existing Word/PDF changes remain outside this revision.
+- User explicitly authorized commit and push of all remaining appropriate changes, including the Word report and PDF export. Determine publication state from actual HEAD, origin/main and working tree.
 
 ## Files Changed
 
-- presentations/Assignment_I_Olist_2702751284.pptx: updated notes only; visible slides unchanged.
-- docs/presentation-notes.md: exact spoken narration and sources.
-- docs/presentation-video.md: timing and private-notes recording guidance.
-- README.md: updated 9:30 duration target.
-- docs/current-task.md: current scope and verified state.
+- Laporan Big Data Analytics - 2702751284.docx: user-saved document update, paragraph text unchanged from Git.
+- Laporan Big Data Analytics - 2702751284.pdf: new 19-page report export.
+- README.md: report PDF link and regeneration guidance.
+- docs/current-task.md: report publication scope and validation; narration/recording guidance already committed.
 
 ## Known Issues / Risks
 
@@ -48,21 +49,20 @@ Ready for review
 - Low model precision, temporal validation and intervention cost evaluation remain future work; operational impact and cluster scalability are not demonstrated.
 - Student fills AI declaration; do not choose the percentage.
 - Git excludes datasets/runtime/generated QA. Another computer needs local prerequisites separately to run notebooks.
-- Pre-existing user changes remain local in the Word report, plus an untracked submission PDF. They are excluded from the narration commit; review/publish separately if requested.
 
 ## Validation
 
 ### Build
 
-PASS — Microsoft PowerPoint edited notes, saved a new candidate and exported all 11 slides. Verified candidate copied to the canonical PPT path.
+PASS — prior PowerPoint notes build remains unchanged. Existing report PDF opened/read successfully; no document generation or analytic build needed for this publication.
 
 ### Tests
 
-PASS — all 11 notes match the narration/source/timing data; all 11 exported slide images are pixel-identical to the reviewed originals. Text encoding and 570-second target verified. No notebook/model logic changed, so full analytics pipeline NOT RUN.
+PASS — Word ZIP/text review, PDF page/text/key-metric checks and credential-pattern scan. Report body text unchanged; PDF extraction differences are TOC/index entries and the declaration form header. Prior narration/570-second target verification remains valid. Full analytics pipeline NOT RUN because code/results did not change.
 
 ### Lint / Static Analysis
 
-PASS — package integrity validator reports zero findings. Visible slide texts and rendered pixels unchanged, so previous visual layout review remains valid. Whitespace checks pass. Generated QA/scripts/backups remain ignored. Pre-existing Word/PDF user changes remain separate.
+PASS — report sizes are 400,122 bytes (Word) and 658,698 bytes (PDF). No credential patterns or embedded Word files found. Publication content reviewed; whitespace checks pass. Runtime, datasets and generated QA remain ignored. PDF checks establish readability/content, not a new full visual layout review.
 
 ## Environment Notes
 
