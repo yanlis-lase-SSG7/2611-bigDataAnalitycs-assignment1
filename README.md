@@ -32,18 +32,19 @@ Review menunjukkan asosiasi, bukan kausalitas. Graf tidak merekam transit atau m
 
 ## Menjalankan di Windows lokal
 
-Prasyarat: Python 3.11, Java 17, dan runtime Windows Spark/Hadoop yang sesuai. VS Code adalah editor; gunakan kernel lokal, bukan Colab.
+Prasyarat: Windows x64, Python 3.11 64-bit, internet untuk setup, dan sembilan CSV Olist. Java/Hadoop/Spark lokal disiapkan oleh `setup_runtime.py`; tidak perlu menyertakan `.runtime` atau `.venv` dalam ZIP untuk dosen. VS Code adalah editor; gunakan kernel lokal, bukan Colab.
 
 ```powershell
 git clone https://github.com/yanlis-lase-SSG7/2611-bigDataAnalitycs-assignment1.git
 Set-Location 2611-bigDataAnalitycs-assignment1
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe setup_runtime.py
 .\.venv\Scripts\python.exe -m ipykernel install --user --name bda-local --display-name "BDA Local (Python 3.11)"
 ```
 
 1. Unduh sembilan CSV dari [dataset Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) sesuai ketentuan sumber dan letakkan langsung pada `datasets_raw/`. Nama tabel: `olist_customers_dataset.csv`, `olist_geolocation_dataset.csv`, `olist_order_items_dataset.csv`, `olist_order_payments_dataset.csv`, `olist_order_reviews_dataset.csv`, `olist_orders_dataset.csv`, `olist_products_dataset.csv`, `olist_sellers_dataset.csv`, serta `product_category_name_translation.csv`.
-2. Pulihkan runtime yang telah diuji dari mesin asal: `.runtime/jdk-*/` (Java 17), `.runtime/hadoop/bin/` (`winutils.exe`, `hadoop.dll`), dan `.runtime/spark-home/` (`bin`, `jars` untuk Spark 4.0.4). Cache/temp tidak perlu disalin. Git tidak menyertakan runtime ini; instalasi Python saja belum cukup. Launcher lokal telah diperbaiki untuk path dengan spasi. Detail sumber/checksum ada pada [runtime prerequisites](docs/runtime-prerequisites.md).
+2. Pastikan `setup_runtime.py` selesai dengan PASS. Script mengunduh Java dan helper Hadoop dengan SHA-256 tersemat, menyalin Spark dari package PySpark 4.0.4 dengan verifikasi RECORD, memperbaiki launcher untuk path dengan spasi, lalu menguji tulis/baca lima baris Parquet. Pengulangan setup memverifikasi runtime yang sudah ada. `setup_runtime.py --check` memeriksa tanpa unduhan. Detail sumber/checksum dan penanganan error ada pada [runtime prerequisites](docs/runtime-prerequisites.md).
 3. Buka root repository di VS Code dan pilih `.venv\Scripts\python.exe` atau kernel BDA Local. Jalankan notebook **01 → 02 → 03**. Input, staging dan output tetap di checkout lokal. Jika kernel dimulai di folder lain, atur `$env:BDA_PROJECT_DIR = (Get-Location).Path` sebelum membuka kernel, atau set environment kernel ke root checkout.
 4. Alternatif dari root: `.\.venv\Scripts\python.exe run_local_notebooks.py`. Perintah ini menjalankan ulang dan menyimpan output ketiga notebook, serta mengganti artefak hasil yang dihasilkan pipeline.
 

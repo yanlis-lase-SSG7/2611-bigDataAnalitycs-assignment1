@@ -15,7 +15,7 @@ Alternatif: jalankan run_local_notebooks.py menggunakan .venv\Scripts\python.exe
 
 ## Environment proyek
 
-Python lokal menggunakan PySpark 4.0.4. Microsoft OpenJDK 17, Hadoop Windows native helpers, dan Spark berada dalam .runtime. Sumber dan checksum native helpers dicatat pada .runtime/hadoop/sources.json. Launcher Spark diperbaiki agar path dengan spasi dapat digunakan. Staging, file sementara, dan warehouse juga berada dalam proyek. Environment diterapkan pada proses kernel tanpa perubahan PATH sistem. Spark memakai empat thread lokal; ini prototipe satu mesin.
+Python lokal menggunakan PySpark 4.0.4. Jalankan `setup_runtime.py` setelah menginstal requirements.txt untuk menyiapkan Microsoft OpenJDK 17, Hadoop Windows native helpers, dan Spark dalam .runtime. Sumber/checksum serta hash berkas dicatat pada .runtime/setup-manifest.json; instalasi lama juga memiliki .runtime/hadoop/sources.json. Setup menguji Spark dan round-trip Parquet kecil. Launcher Spark diperbaiki agar path dengan spasi dapat digunakan. Staging, file sementara, dan warehouse juga berada dalam proyek. Environment diterapkan pada proses kernel tanpa perubahan PATH sistem. Spark memakai empat thread lokal; ini prototipe satu mesin. Lihat ../docs/runtime-prerequisites.md untuk perangkat dosen.
 
 ## Aturan data
 
