@@ -1,0 +1,358 @@
+{
+  "definition": "delivered with non-null actual and estimated timestamps; actual > estimated",
+  "national": {
+    "orders": 96470,
+    "delayed": 7826,
+    "delay_rate_pct": 8.11
+  },
+  "orphan_counts": {
+    "orders_to_customers": 0,
+    "items_to_orders": 0,
+    "items_to_sellers": 0,
+    "items_to_products": 0
+  },
+  "tables": {
+    "olist_customers_dataset": {
+      "rows": 99441,
+      "columns": 5,
+      "fields": {
+        "customer_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "customer_unique_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "customer_zip_code_prefix": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "customer_city": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "customer_state": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "olist_geolocation_dataset": {
+      "rows": 1000163,
+      "columns": 5,
+      "fields": {
+        "geolocation_zip_code_prefix": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "geolocation_lat": {
+          "type": "double",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "geolocation_lng": {
+          "type": "double",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "geolocation_city": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "geolocation_state": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "olist_order_items_dataset": {
+      "rows": 112650,
+      "columns": 7,
+      "fields": {
+        "order_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "order_item_id": {
+          "type": "int",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "product_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "seller_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "shipping_limit_date": {
+          "type": "timestamp",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "price": {
+          "type": "double",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "freight_value": {
+          "type": "double",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "olist_order_payments_dataset": {
+      "rows": 103886,
+      "columns": 5,
+      "fields": {
+        "order_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "payment_sequential": {
+          "type": "int",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "payment_type": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "payment_installments": {
+          "type": "int",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "payment_value": {
+          "type": "double",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "olist_order_reviews_dataset": {
+      "rows": 99224,
+      "columns": 7,
+      "fields": {
+        "review_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "order_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "review_score": {
+          "type": "int",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "review_comment_title": {
+          "type": "string",
+          "null_count": 87656,
+          "null_pct": 88.3415
+        },
+        "review_comment_message": {
+          "type": "string",
+          "null_count": 58247,
+          "null_pct": 58.7025
+        },
+        "review_creation_date": {
+          "type": "timestamp",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "review_answer_timestamp": {
+          "type": "timestamp",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "olist_orders_dataset": {
+      "rows": 99441,
+      "columns": 8,
+      "fields": {
+        "order_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "customer_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "order_status": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "order_purchase_timestamp": {
+          "type": "timestamp",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "order_approved_at": {
+          "type": "timestamp",
+          "null_count": 160,
+          "null_pct": 0.1609
+        },
+        "order_delivered_carrier_date": {
+          "type": "timestamp",
+          "null_count": 1783,
+          "null_pct": 1.793
+        },
+        "order_delivered_customer_date": {
+          "type": "timestamp",
+          "null_count": 2965,
+          "null_pct": 2.9817
+        },
+        "order_estimated_delivery_date": {
+          "type": "timestamp",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "olist_products_dataset": {
+      "rows": 32951,
+      "columns": 9,
+      "fields": {
+        "product_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "product_category_name": {
+          "type": "string",
+          "null_count": 610,
+          "null_pct": 1.8512
+        },
+        "product_name_lenght": {
+          "type": "int",
+          "null_count": 610,
+          "null_pct": 1.8512
+        },
+        "product_description_lenght": {
+          "type": "int",
+          "null_count": 610,
+          "null_pct": 1.8512
+        },
+        "product_photos_qty": {
+          "type": "int",
+          "null_count": 610,
+          "null_pct": 1.8512
+        },
+        "product_weight_g": {
+          "type": "int",
+          "null_count": 2,
+          "null_pct": 0.0061
+        },
+        "product_length_cm": {
+          "type": "int",
+          "null_count": 2,
+          "null_pct": 0.0061
+        },
+        "product_height_cm": {
+          "type": "int",
+          "null_count": 2,
+          "null_pct": 0.0061
+        },
+        "product_width_cm": {
+          "type": "int",
+          "null_count": 2,
+          "null_pct": 0.0061
+        }
+      }
+    },
+    "olist_sellers_dataset": {
+      "rows": 3095,
+      "columns": 4,
+      "fields": {
+        "seller_id": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "seller_zip_code_prefix": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "seller_city": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "seller_state": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    },
+    "product_category_name_translation": {
+      "rows": 71,
+      "columns": 2,
+      "fields": {
+        "product_category_name": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "product_category_name_english": {
+          "type": "string",
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      }
+    }
+  },
+  "critical_null_assertions": {
+    "olist_orders_dataset": [
+      "order_id",
+      "customer_id",
+      "order_status",
+      "order_purchase_timestamp",
+      "order_estimated_delivery_date"
+    ],
+    "olist_customers_dataset": [
+      "customer_id",
+      "customer_state"
+    ],
+    "olist_order_items_dataset": [
+      "order_id",
+      "order_item_id",
+      "seller_id",
+      "product_id"
+    ],
+    "olist_sellers_dataset": [
+      "seller_id",
+      "seller_state"
+    ],
+    "olist_products_dataset": [
+      "product_id"
+    ]
+  },
+  "seller_attribution": "smallest order_item_id per order; state aggregates, not seller-level SLA",
+  "privacy": "ephemeral salted SHA-256 seller tokens in Spark; no identifiers, tokens, or salt exported; state aggregates only; not anonymous"
+}

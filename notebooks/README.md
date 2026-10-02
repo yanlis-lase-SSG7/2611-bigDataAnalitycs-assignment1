@@ -36,6 +36,7 @@ model_validation_comparison.csv mencatat perbandingan kandidat; model_validation
 Notebook 01 menghasilkan sembilan tabel datasets_parquet, ingestion_summary_report.csv, dan ingestion_null_profile.json.
 Notebook 02 menghasilkan feature dataset, audit persiapan, laporan state, feature importance, confusion matrix, dan evaluasi ROC-AUC/PR-AUC/precision/recall/F1 serta baseline.
 Notebook 03 menghasilkan laporan rute, metrik node, dan audit konsistensi dengan notebook 02.
+Sesudah notebook 01, `../eda_assignment1.py` dapat dijalankan untuk profil EDA tambahan, kemudian `../make_eda_figures.py` untuk figur laporan. Keduanya membaca hasil 01 dan tidak mengubah fitur/model notebook 02–03.
 
 Semua laporan berada pada outputs_ml_graph. Output sel disimpan pada notebook setelah eksekusi. Gunakan angka terbaru untuk memperbarui laporan. Backup notebook lama telah dihapus saat pembersihan proyek; versi yang dipublikasikan selanjutnya dilacak melalui Git.
 

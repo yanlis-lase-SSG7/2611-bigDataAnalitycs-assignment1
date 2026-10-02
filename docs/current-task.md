@@ -1,10 +1,10 @@
 # Current Task
 
-Last updated: 2026-09-29
+Last updated: 2026-10-02
 
 ## Current Objective
 
-Synchronize the renamed presentation and submission state, preserving automatic runtime setup and lecturer packaging guidance.
+Prepare and visually polish the Assignment I PowerPoint and one-video recording guide against the revised Word report and freshly rerun notebooks.
 
 ## Current Status
 
@@ -12,74 +12,63 @@ Ready for review
 
 ## Completed
 
-- Added setup_runtime.py for Windows x64 / 64-bit Python 3.11 after requirements installation.
-- Pinned Microsoft OpenJDK 17.0.20.1 and its publisher archive SHA-256; pinned Hadoop helpers to an immutable commit with known SHA-256 checksums.
-- Copy Spark bin/jars from PySpark 4.0.4 only after validating package RECORD hashes; patch all three launcher path quoting sites for paths containing spaces.
-- Record 837 runtime file hashes and smoke-test Java/Spark with a five-row Parquet write/read. Fresh runtime installation passed in an isolated ignored test directory, using existing installed Python dependencies.
-- Verification-only --check rerun also passed: identical 837 file hashes and successful Java/Spark/Parquet smoke test without downloads.
-- Existing conflicting runtime files are preserved; bad downloaded/cache checksums stop setup. Four integrity/preservation tests pass.
-- Updated README, notebook guide and runtime guide with setup commands and lecturer ZIP contents. Dataset still supplied separately; .venv/.runtime excluded from ZIP and Git.
-- Report PDF, Word and 11-slide PPT remain unchanged; narration is 1,238 words with a 9:30 target, not a measured recording duration.
-- User renamed the PPT to presentations/Laporan Big Data Analytics - 2702751284.pptx. Bytes match the previously committed deck exactly; README and recording guide links now use the new name.
-- User reports video recording is complete and SharePoint contains the submission materials. Remote file contents, permissions and actual video duration have not been independently verified.
+- The three notebooks ran locally without cell errors. Their source cells are unchanged from HEAD; saved ingestion, model and graph numbers agree with the revised report.
+- The Word report and matching 24-page PDF include measured EDA and the enterprise data-lake proposal. A governance-table sentence was corrected to match ephemeral salted seller tokens in the EDA script. The student-owned AI declaration was left untouched.
+- Updated the existing 11-slide PPT. Slide 4 distinguishes all order statuses from delivered orders with valid delay labels; slide 6 shows tested local ingestion versus proposed enterprise storage/cluster; slide 8 shows measured null profiles and controls; slide 10 separates customer-state delay from seller-to-customer routes.
+- Updated all 11 speaker notes from docs/presentation-notes.md and revised docs/presentation-video.md for a single-slide-show recording without a VS Code switch.
+- Restyled all 11 slides with a consistent navy–teal editorial design. The cover and closing slide use a dark background, ingestion/model results emphasize the measured numbers, and stakeholder/technology tables remain editable. All speaker notes and key metrics were preserved. The user-renamed PPT path was retained and documentation links corrected.
 
 ## Remaining Work
 
-- User reviews setup and lecturer packaging guidance on the target device. Commit/push is authorized; determine publication state from actual Git HEAD, origin/main and working tree.
-- Create lecturer ZIP when requested; upload/SharePoint contents have not been verified.
-- Student verifies SharePoint access, video duration (maximum 10 minutes), AI declaration and final PDF; upload the PDF to LMS and include GitHub/SharePoint links in the answer.
+- Student rehearses and records the video, checks the final duration is below 10 minutes, and verifies that speaker notes are not captured. The 9:30 timeline is an estimate, not a measured recording.
+- Student reviews the AI Use Declaration, which still contains older statements about AI text/script use and tools. No AI percentage was selected or changed by Codex.
+- The revised Word manuscript remains local and ignored by Git at the user's request. The updated PDF, renamed PPT, notebooks, EDA code, small aggregate reports, figures and documentation form the repository checkpoint. The superseded tracked report filenames are removed.
 
 ## Technical Decisions
 
-- Setup is an explicit command before notebook execution, not a silent download triggered inside a notebook. Python itself and requirements installation remain prerequisites.
-- Windows x64 only; macOS/Linux/ARM64/Colab require adaptation. No system PATH edits or global Java installation.
-- Microsoft Java source: https://learn.microsoft.com/en-us/java/openjdk/download. Hadoop helper repository is third-party, not an official Apache Windows binary distribution.
-- Installed package RECORD and local manifest establish consistency, not publisher signatures. Download checksums are pinned in source.
-- No analytic logic, saved notebook output or presentation metrics changed. Notebook order remains 01 -> 02 -> 03; local Spark prototype and low precision limitations still apply.
+- Keep 11 slides to protect the video time limit. The displayed demo results are checks performed earlier, not an execution inside the recording. Use a flat typographic layout with a dark cover/closing pair rather than adding decorative panels.
+- Spark local[4], Parquet and the measured EDA are implemented locally. S3/HDFS, multi-node Spark, database servers and enterprise controls remain proposals pending benchmark and implementation.
+- Slide 4 uses different denominators: 99,441 all-status orders versus 96,470 delivered orders with valid actual/estimated timestamps. Slide 10 distinguishes customer-state rates from primary-seller-to-customer routes.
+- Four 300-DPI EDA PNGs and the architecture diagram are embedded presentation snapshots. If source data or figures change, refresh the PPT before making a new video.
 
 ## Files Changed
 
-- presentations/Assignment_I_Olist_2702751284.pptx -> presentations/Laporan Big Data Analytics - 2702751284.pptx (identical content)
-- README.md
-- docs/presentation-video.md
-- docs/current-task.md
+- presentations/Big Data Analytics - Laporan 2702751284.pptx and Big Data Analytics - Laporan 2702751284.pdf.
+- eda_assignment1.py, make_eda_figures.py, figures/ and small EDA aggregate outputs.
+- Saved outputs in notebooks 01–03 and ingestion_summary_report.csv.
+- .gitignore, README.md, notebooks/README.md, docs/presentation-notes.md, docs/presentation-video.md and this file.
 
 ## Known Issues / Risks
 
-- First setup needs internet and disk space for Python dependencies, the approximately 187 MB Java archive, runtime and staging copies.
-- Fresh runtime validated on the current Windows computer with existing Python dependencies, not on an independent lecturer device or newly installed Python environment.
-- If existing unrecorded runtime differs, preserve/rename the indicated folder before retrying; script does not overwrite it.
-- Video is recorded according to the user; duration/audio/privacy of presenter notes, SharePoint access and student AI declaration remain user review items.
+- Narration is about 1,260 words after the latest clarification; the 9:30 estimate requires practice and a natural speaking rate near 140 words per minute when pauses are included. Trim examples if the rehearsal exceeds 10 minutes.
+- No revised video was created after the PPT update because the student must record their own voice/presentation. Earlier SharePoint/video contents have not been independently verified.
+- Existing report AI declaration is unchanged and needs student review before submission.
 
 ## Validation
 
 ### Build
 
-PASS — fresh runtime download/checksum, Spark launcher patch, Java version, Spark 4.0.4 and five-row Parquet round trip in a path containing spaces. --check rerun passed without downloads.
+PASS — PowerPoint opened the style candidate and exported 11 slides to PDF. All 11 slides were visually inspected at full size, and the final PPT is byte-identical to the validated candidate.
 
 ### Tests
 
-PASS — four unittest safety checks (preserve conflicting local work, reject corrupt cache/downloads, detect modified runtime). Full analytics pipeline NOT RUN because analytic code did not change.
+PASS — four runtime safety tests and the read-only demo check. The three user-rerun notebooks saved error-free outputs that agree with report figures. PPT checks found 11 slides, notes unchanged on all 11, retained native tables and four EDA image slides, and preserved key metrics. No analytic pipeline was rerun during the style edit.
 
 ### Lint / Static Analysis
 
-PASS — current PPT is byte-identical to the committed deck (84,928 bytes); ZIP integrity passes, with 11 slides and no embedded files. Presentation links updated and final diff/whitespace reviewed. Prior Python checks remain valid; no code changes. Dataset, runtime and QA artifacts remain ignored. Publication state is verified from Git separately.
+PASS — both new Python scripts compile; presentation package integrity had zero findings; layout geometry reported zero findings and warnings. Git whitespace and secret-pattern checks passed. EDA CSV headers contain aggregates only.
 
 ## Environment Notes
 
-- Windows x64, Python 3.11, PySpark 4.0.4, Java 17. Existing main project runtime remains unchanged.
-- Ignored .report_review/runtime setup test/ contains isolated runtime testing artifacts. Earlier failed launcher attempt and corrected build remain there for QA; only the corrected build passed.
-- Canonical root: D:\Private Project\bda\BDA_Olist_Project. main tracks origin/main; see actual Git status for publication state.
+- Windows, Microsoft PowerPoint for render verification, Python 3.11 in .venv for PPT editing and validation. QA source and PDF renders are ignored under .report_review/.
+- Root: D:\Private Project\bda\BDA_Olist_Project. Raw data, Parquet, runtime and .venv remain local.
 
 ## Recommended Next Step
 
-Package source, setup script, guides, raw CSVs and small saved reports for the lecturer. Use setup_runtime.py before notebooks; exclude environments, runtime, backups and generated large datasets.
+Open the final PPT, rehearse with Presenter View or a separate notes device, make a 20-second test recording, then record and check one complete video under 10 minutes. Review the AI declaration before submitting the report.
 
 ## Useful Commands
 
 ```powershell
-.\.venv\Scripts\python.exe setup_runtime.py
-.\.venv\Scripts\python.exe setup_runtime.py --check
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe run_local_notebooks.py
+.\.venv\Scripts\python.exe demo_assignment1.py
 ```

@@ -4,16 +4,18 @@ Prototipe persiapan data dan rancangan analitik untuk dataset historis Brazilian
 
 ## Berkas utama
 
-- [Laporan final](Laporan%20Big%20Data%20Analytics%20-%202702751284.docx): Bab 1–4, justifikasi teknologi, bukti data, batas implementasi, dan referensi. Deklarasi AI masih harus dilengkapi mahasiswa.
-- [Laporan PDF](Laporan%20Big%20Data%20Analytics%20-%202702751284.pdf): ekspor laporan 19 halaman. Periksa kembali deklarasi mahasiswa sebelum pengumpulan; ekspor ulang jika Word diubah.
+- Laporan kerja lokal `Big Data Analytics - Laporan 2702751284.docx`: Bab 1–4, cetak biru arsitektur, EDA terukur, batas implementasi, dan referensi. Berkas ini sengaja di-ignore dari Git sesuai instruksi pemilik proyek; deklarasi AI tetap milik mahasiswa.
+- [Laporan PDF](Big%20Data%20Analytics%20-%20Laporan%202702751284.pdf): ekspor dari Word hasil revisi. Periksa kembali deklarasi dan batas 25 halaman sebelum pengumpulan; ekspor ulang jika Word diubah.
 - [Notebook 01](notebooks/01_Ingestion_and_Parquet_Conversion.ipynb): ingestion sembilan CSV, validasi, konversi Parquet Snappy.
 - [Notebook 02](notebooks/02_Feature_Engineering_and_ML_Prep.ipynb): fitur per order, split hash, perbandingan bobot kelas dan pemilihan ambang pada validation.
 - [Notebook 03](notebooks/03_Graph_Analytics.ipynb): graf state asal–tujuan dan analisis rute dengan NetworkX.
 - [Panduan notebook](notebooks/README.md), [catatan presentasi](docs/presentation-notes.md), dan [status pekerjaan](docs/current-task.md).
-- [PPT Assignment I](presentations/Laporan%20Big%20Data%20Analytics%20-%202702751284.pptx): 11 slide 16:9 dengan speaker notes natural, penjelasan proyek/tech stack, dan hasil demo yang telah dijalankan.
-- [Panduan rekaman](docs/presentation-video.md) dan [naskah siap baca](docs/presentation-notes.md): seluruh presentasi di PowerPoint, target 9 menit 30 detik tanpa perpindahan ke VS Code.
+- [PPT Assignment I](presentations/Big%20Data%20Analytics%20-%20Laporan%202702751284.pptx): 11 slide 16:9 bergaya navy–teal dengan speaker notes percakapan, arsitektur lokal-versus-enterprise, empat grafik EDA, serta hasil ingestion, model dan graf yang telah dijalankan.
+- [Panduan rekaman](docs/presentation-video.md) dan [naskah siap baca](docs/presentation-notes.md): seluruh presentasi di PowerPoint, target latihan 9 menit 30 detik tanpa perpindahan ke VS Code.
 - `demo_assignment1.py`: pemeriksaan read-only atas konsistensi ringkasan hasil tersimpan; jalankan `python demo_assignment1.py`. Script ini tidak menjalankan ulang pipeline notebook dan tidak membutuhkan package tambahan.
 - `outputs_ml_graph/`: ringkasan hasil CSV/JSON kecil dari eksekusi lokal. Dataset fitur, daftar order per split, dan seluruh tabel ambang tidak dipublikasikan.
+- `eda_assignment1.py`: profil sembilan tabel Parquet tervalidasi, pembacaan orders bertipe dengan FAILFAST, empat orphan assertion, distribusi status, delay per state pelanggan, dan ringkasan state penjual. Skrip mengekspor agregat, bukan ID pelanggan/penjual.
+- `make_eda_figures.py` dan `figures/`: diagram cetak biru serta empat grafik EDA 300 DPI yang membaca laporan agregat terukur. Angka state tidak diisi manual.
 
 ## Hasil tersimpan
 
@@ -48,13 +50,22 @@ py -3.11 -m venv .venv
 3. Buka root repository di VS Code dan pilih `.venv\Scripts\python.exe` atau kernel BDA Local. Jalankan notebook **01 → 02 → 03**. Input, staging dan output tetap di checkout lokal. Jika kernel dimulai di folder lain, atur `$env:BDA_PROJECT_DIR = (Get-Location).Path` sebelum membuka kernel, atau set environment kernel ke root checkout.
 4. Alternatif dari root: `.\.venv\Scripts\python.exe run_local_notebooks.py`. Perintah ini menjalankan ulang dan menyimpan output ketiga notebook, serta mengganti artefak hasil yang dihasilkan pipeline.
 
+Untuk mengulang EDA dan gambar setelah notebook 01 selesai:
+
+```powershell
+.\.venv\Scripts\python.exe eda_assignment1.py
+.\.venv\Scripts\python.exe make_eda_figures.py
+```
+
+Skrip EDA menjalankan Spark di satu mesin dan membaca Parquet keluaran notebook 01. Rancangan S3/HDFS, partisi berdasarkan waktu, katalog, dan Spark cluster dalam laporan adalah opsi enterprise yang belum diuji; tiga worker contoh adalah hipotesis sizing yang perlu benchmark.
+
 Sumber notebook sudah menggunakan penemuan root/`BDA_PROJECT_DIR` untuk lintas perangkat. Output sel tersimpan berasal dari run Windows sebelumnya; perubahan path ini tidak mengubah logika perhitungan.
 
 ## Isi yang tetap lokal
 
 Dataset raw/Parquet, `.venv`, `.runtime`, backup, ekspor besar, materi kuliah, file sementara, serta script migrasi/revisi sekali pakai diabaikan dari Git. Tidak menggunakan Git LFS. Folder tersebut dapat dipulihkan terpisah atau hasilnya dibuat ulang. Repository menyertakan notebook dengan output tersimpan dan ringkasan hasil untuk memudahkan pemeriksaan dosen.
 
-Mahasiswa menyatakan video sudah dibuat dan tersedia di SharePoint. Sebelum pengumpulan LMS, periksa akses tautan, durasi maksimal 10 menit dan deklarasi AI. Pengembangan berikutnya: validasi temporal dan analisis biaya intervensi sesuai tahap tugas berikutnya. Konteks lintas perangkat dipelihara melalui `AGENTS.md` dan `docs/current-task.md`.
+Mahasiswa menyatakan video versi sebelumnya sudah tersedia di SharePoint. Karena PPT telah diperbarui, periksa apakah video yang akan dikumpulkan memakai slide final; rekam ulang bila perlu. Sebelum pengumpulan LMS, periksa akses tautan, durasi maksimal 10 menit dan deklarasi AI. Pengembangan berikutnya: validasi temporal dan analisis biaya intervensi sesuai tahap tugas berikutnya. Konteks lintas perangkat dipelihara melalui `AGENTS.md` dan `docs/current-task.md`.
 
 ## Workflow Codex lintas perangkat
 

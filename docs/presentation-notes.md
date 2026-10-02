@@ -1,6 +1,6 @@
 # Naskah presentasi Olist: bahasa percakapan
 
-Naskah ini sama dengan narasi pada speaker notes PPT. Total sekitar 1,238 kata, target 9 menit 30 detik atau rata-rata 130 kata per menit. Ini perkiraan, bukan durasi rekaman terukur. Referensi dan target waktu tidak perlu dibacakan.
+Naskah ini sama dengan narasi pada speaker notes PPT. Target total tetap 9 menit 30 detik; durasi nyata harus diuji lewat latihan. Referensi dan target waktu tidak perlu dibacakan.
 
 Baca satu paragraf sebagai satu gagasan. Ambil jeda singkat saat berpindah ke gagasan berikutnya. Tidak perlu menambahkan kata pengisi pada setiap kalimat; biarkan penjelasan dan contoh yang membuatnya terdengar seperti percakapan.
 
@@ -40,22 +40,19 @@ Untuk Assignment I, fokus utamanya adalah rancangan solusi dan persiapan data. M
 
 Sumber: Laporan Bab 1 dan 2; lingkup Assignment I pada instruksi tugas lokal.
 
-## Slide 4: Konteks pasar dan urgensi bisnis
+## Slide 4: Distribusi order dan definisi keterlambatan
 
-Target waktu: 02:05–02:40
+Target waktu: 02:05–02:50
 
-Lalu, kenapa masalah pengiriman ini penting? Dalam e-commerce, pelanggan bukan hanya mempertimbangkan barangnya, tetapi juga kapan barang itu sampai.
+Di sini saya ingin memperjelas dari mana angka keterlambatan tadi berasal. Grafik kiri mencakup semua 99.441 order; sebagian besar, yaitu 96.478, berstatus delivered. Sumbu jumlah memakai skala log agar status yang jumlahnya kecil masih terlihat. Status lain seperti canceled dan shipped tetap ada di data, tetapi tidak ikut dihitung dalam delay rate.
 
-Sebagai konteks, survei DHL tahun 2026 menyebut dua puluh persen pembeli merasa pengiriman lebih cepat dapat mendorong mereka menyelesaikan pembelian. OECD juga membahas peran ulasan dan rating dalam kepercayaan pada platform.
+Ada delapan order delivered tanpa tanggal penerimaan aktual. Setelah delapan itu dikeluarkan, tersisa 96.470 order yang bisa dibandingkan dengan tanggal estimasi. Dari populasi inilah 7.826 order, atau 8,11 persen, tercatat terlambat. Jadi, dua grafik ini memakai denominator berbeda. Saya perlu menyebutkannya supaya angka 8,11 persen tidak disalahartikan sebagai persentase dari seluruh order.
 
-Saya memakai sumber ini untuk menjelaskan relevansi masalah. Namun, survei tersebut berbeda dari data Olist yang saya olah. Jadi, sumber eksternal memberi konteks, sedangkan angka dan prioritas analisis tetap saya ambil dari data proyek.
-
-Sumber: DHL Group (2026): https://group.dhl.com/en/media-relations/press-releases/2026/dhl-ecommerce-trends-report-2026-old-rules-do-not-apply-in-the-age-of-ai.html
-OECD (2019): https://doi.org/10.1787/23561431-en
+Sumber: outputs_ml_graph/eda_order_status.csv; outputs_ml_graph/eda_quality_profile.json; laporan Tabel 4.5.
 
 ## Slide 5: Tech stack dan alasan pemilihan
 
-Target waktu: 02:40–04:00
+Target waktu: 02:50–04:00
 
 Untuk mengerjakan proyek ini, saya memakai Python, dengan VS Code sebagai editor. Jupyter Notebook membantu saya menyusun proses per langkah, sehingga kode dan hasilnya bisa dilihat bersama.
 
@@ -69,19 +66,17 @@ Git dan GitHub mencatat versi kode, laporan, serta ringkasan hasil. Jadi, kalau 
 
 Sumber: requirements.txt; notebooks/README.md; docs/runtime-prerequisites.md; laporan bagian 2.4.
 
-## Slide 6: Alur pipeline dan batas implementasi
+## Slide 6: Arsitektur data lake dan batas implementasi
 
 Target waktu: 04:00–05:00
 
-Supaya prosesnya mudah diikuti, saya membaginya menjadi tiga notebook. Notebook pertama menangani pembacaan CSV, pemeriksaan data, dan penyimpanan ke Parquet. Notebook kedua menyusun fitur dan model. Notebook ketiga menangani analisis graf.
+Diagram ini membedakan sistem yang sudah saya jalankan dari rancangan pengembangannya. Pada prototipe, sembilan CSV dibaca Spark dengan skema dan mode FAILFAST, divalidasi, lalu disimpan sebagai Parquet Snappy lokal. Skrip EDA dan notebook berikutnya membaca tabel tersebut. Semua ini berjalan di satu komputer dengan Spark local[4].
 
-Bagian pentingnya ada pada cara menggabungkan tabel. Satu order bisa mempunyai beberapa item dan beberapa catatan pembayaran. Kalau langsung digabung, nilai yang sama bisa muncul berulang dan totalnya menjadi terlalu besar.
+Untuk skala enterprise, saya mengusulkan zona raw dan curated pada S3 atau HDFS, lalu pemrosesan pada cluster Spark. Tiga worker pada diagram hanya contoh titik awal, bukan kebutuhan kapasitas yang sudah terbukti. Jumlah worker, partisi waktu, biaya, dan kinerja masih harus diuji.
 
-Karena itu, detail item dan payment saya ringkas lebih dulu per order. Setelah itu baru saya lakukan join. Hasil fitur akhirnya mempunyai satu baris untuk satu order. Itu yang dimaksud dengan grain order.
+Sebelum membuat fitur satu baris per order, saya juga merangkum item dan payment per order. Langkah itu mencegah angka terlipat akibat join pada dua tabel yang sama-sama punya banyak baris per order. Warehouse, NoSQL, dan graph database fisik belum dibangun.
 
-Parquet sudah berjalan. Warehouse masih berupa rancangan, sementara server NoSQL, graph database fisik, dan dashboard belum saya bangun. NetworkX yang saya gunakan saat ini adalah library graf dalam memori.
-
-Sumber: notebooks/01_Ingestion_and_Parquet_Conversion.ipynb; notebook 02/03; laporan Bab 2 dan 4.
+Sumber: laporan Bab 2 dan 4; figures/fig0_enterprise_architecture.png; notebook 01–03.
 
 ## Slide 7: Hasil ingestion dan kualitas data
 
@@ -97,19 +92,15 @@ Perlu dibedakan juga: demo membaca ringkasan hasil tersimpan. Pemeriksaan pembac
 
 Sumber: Hasil demo pengguna, bagian ingestion; outputs_ml_graph/ingestion_summary_report.csv dan ingestion_null_profile.json.
 
-## Slide 8: Tata kelola dan perlindungan data
+## Slide 8: Profil null dan tata kelola data
 
 Target waktu: 05:50–06:35
 
-Selain menghasilkan analisis, saya juga perlu memastikan data dikelola dengan jelas. Karena itu, raw tetap tersedia untuk audit, sedangkan yang masuk GitHub adalah kode, laporan, dan ringkasan agregat. Dataset raw, credential, serta runtime tidak ikut dipublikasikan.
+Grafik ini menunjukkan bahwa nilai kosong paling banyak ada pada judul dan teks ulasan: masing-masing sekitar 88 dan 59 persen. Keduanya bersifat opsional, jadi saya tidak menghapus record hanya karena teks review tidak diisi. Sebaliknya, kolom kunci yang penting untuk perhitungan diuji null-nya, dan empat relasi order–customer, item–order, item–seller, serta item–product yang saya periksa tidak menghasilkan orphan.
 
-Untuk penggunaan operasional, saya merancang akses sesuai peran, batas penyimpanan data, dan pemeriksaan informasi pribadi pada teks ulasan. Misalnya, tim yang hanya membutuhkan ringkasan rute tidak harus mendapat akses ke seluruh teks review.
+Untuk privasi, skrip EDA memakai token seller SHA-256 bersalt sementara di memori Spark, lalu hanya mengeluarkan agregat per state. Itu membantu membatasi ID pada output, tetapi bukan berarti dataset sudah anonim atau siap memenuhi seluruh kewajiban LGPD. Akses sesuai peran, retensi, enkripsi, dan pemeriksaan teks pribadi masih bagian dari rancangan deployment.
 
-ID yang terlihat seperti hash juga tidak otomatis membuat seluruh dataset anonim. Informasi pribadi masih mungkin muncul pada teks.
-
-Jadi, ada praktik yang sudah berjalan di prototipe dan ada kontrol yang masih perlu diterapkan. Saya belum menganggap prototipe ini membuktikan kepatuhan operasional.
-
-Sumber: Laporan Bab 3; .gitignore. Rujukan hukum lengkap terdapat pada laporan.
+Sumber: outputs_ml_graph/eda_quality_profile.json; eda_assignment1.py; figures/fig4_null_profile_heatmap.png; laporan Bab 3–4.
 
 ## Slide 9: Hasil model dan pemilihan ambang
 
@@ -127,19 +118,17 @@ Ada 4.186 false positive, yaitu order tepat waktu yang ikut ditandai. Jadi, hasi
 
 Sumber: Hasil demo pengguna, bagian model; model_evaluation_report.json; model_validation_comparison.csv; model_confusion_matrix.csv.
 
-## Slide 10: Hasil graf dan prioritas rute
+## Slide 10: Wilayah berisiko dan prioritas rute
 
 Target waktu: 07:55–08:50
 
-Untuk graf, saya melihat hubungan antar-state, yaitu wilayah asal seller dan wilayah tujuan customer. Node mewakili state, sedangkan edge mewakili rute asal ke tujuan. Dari data ini terbentuk 27 node dan 409 rute.
+Grafik di kiri mengurutkan state tujuan customer berdasarkan delay rate. AL terlihat paling tinggi, 23,93 persen dari 397 order. Karena volumenya jauh lebih kecil daripada beberapa state lain, saya tidak boleh memilih prioritas hanya dari persentase itu.
 
-Hasil pemeriksaan PASS karena jumlah order dari seluruh rute cocok dengan populasi graf. Sebagai contoh, rute SP ke RJ mempunyai 8.158 order dengan delay 15,49 persen. Angka itu lebih tinggi dari delay nasional, yaitu 8,11 persen.
+Analisis graf melihat hal yang berbeda: state asal primary seller menuju state tujuan customer. Dari agregat ini terbentuk 27 node dan 409 rute. Rute SP ke RJ memuat 8.158 order, dengan 15,49 persen terlambat, sehingga layak diperiksa karena persentase dan volumenya sama-sama berarti. Delay nasional untuk populasi berlabel adalah 8,11 persen.
 
-Karena volumenya cukup besar dan persentase terlambatnya tinggi, rute ini masuk prioritas investigasi. Namun, kita baru mengetahui asal dan tujuan. Kita belum mengetahui tempat transit atau proses yang menyebabkan keterlambatan.
+Graf ini hanya mencatat asal dan tujuan. Tidak ada informasi titik transit atau lokasi hub, jadi saya tidak mengklaim sudah menemukan penyebab fisik keterlambatan. Angka per state customer dan angka per rute juga punya grain berbeda; keduanya tidak dijumlahkan.
 
-Jadi, graf ini membantu menentukan rute yang perlu diperiksa lebih lanjut. Untuk menentukan lokasi hub atau penyebab fisik masalah, saya masih membutuhkan data operasional yang lebih rinci.
-
-Sumber: Hasil demo pengguna, bagian graph; graph_preparation_audit.json; seller_customer_routes_report.csv.
+Sumber: outputs_ml_graph/eda_state_delay.csv; figures/fig3_top10_state_delay_rate.png; graph_preparation_audit.json; seller_customer_routes_report.csv.
 
 ## Slide 11: Ringkasan validasi dan langkah berikutnya
 
